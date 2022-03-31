@@ -1,2 +1,12 @@
-# portfolio
+# Portfolio
+
+Este é o meu repositório pessoal para expor meus trabalhos e ideias. 
+Fique a vontade para dar aquela espiadinha.  
+
 This is my personal repository to show my works and ideas. 
+
+Fale comigo / Contact-me
+
+E-mail : leonascimento.dev@gmail.com
+Linked.in: www.linkedin.com/in/leonascimentodev/ 
+
