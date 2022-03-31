@@ -7,6 +7,6 @@
 
 ### Fale comigo / Contact-me
 
-## E-mail : leonascimento.dev@gmail.com
-## Linked.in: www.linkedin.com/in/leonascimentodev/ 
+#### E-mail : leonascimento.dev@gmail.com
+#### Linked.in: www.linkedin.com/in/leonascimentodev/ 
 
