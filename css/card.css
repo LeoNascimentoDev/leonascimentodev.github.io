@@ -1,0 +1,51 @@
+.card{
+    vertical-align: top;
+    margin: 20px;
+    border: solid 1px rgb(204, 204, 204);
+    width: 260px;
+    height: 300px;
+    box-shadow: 5px 5px 20px  rgb(133, 133, 133);
+    padding: 3px;
+    background-color: #fff;
+}
+.card img{
+    width: 100%;
+
+}
+.curso-info{
+    position: relative;
+    box-sizing: border-box;
+    width: 250px;
+    height: 100px;
+    top: 15px;
+    left: 5px;
+   overflow: hidden;
+   margin: 0px;
+   padding: 0px;
+
+}
+.curso-info>h4{
+    position: relative;
+    margin: 0px;
+    text-align: left;
+    font-size: 25px;
+}
+.curso-info>p{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 18px;
+}
+.curso-preco{
+    float: right;
+    color: green;
+    padding: 5px;
+}
+.preco-de{
+    font-size: 20px;
+    text-decoration: line-through;
+    color: red;
+}
+.preco-por{
+    font-size: 25px;
+    font-weight: 1000;
+}
