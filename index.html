@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leo Nascimento</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico">
+
 
     <!-- fonts -->
 
@@ -36,9 +38,7 @@
 
 </head>
 
-<!-- <canvas id="c">
-    
-</canvas> -->
+
 
 <body>
     <header>
@@ -184,13 +184,15 @@
 
 </body>
 
-<!-- Matrix -->
-<!-- <script type="text/javascript" src="js/matrix.js"></script> -->
-<script type="text/javascript" src="js/scroll.js"></script>
+<!-- <script type="text/javascript" src="js/scroll.js"></script> -->
 
 
 <script>
 
+    let element = document.querySelector("#content")
+    element.addEventListener('mousemove', function () {
+        element.scrollIntoView({ behavior: "auto", block: "end", inline: "nearest" });
+    });
 
 </script>
 
