@@ -17,7 +17,7 @@
 
     <!-- import css -->
 
-    <link rel="stylesheet" href="/css/animation.css" .css">
+    <link rel="stylesheet" href="/css/animation.css">
     <link rel="stylesheet" href="/css/card.css">
     <link rel="stylesheet" href="/css/mediaquery.css">
 
@@ -157,6 +157,7 @@
         }
 
         .hr2 {
+            margin-top: 20px;
             border: 0;
             height: 2px;
             background-image: linear-gradient(to right, transparent, #CCC, transparent);
@@ -197,11 +198,19 @@
 
         #content:hover>#hide {
             height: 400px;
-            /* display: flex;
-            flex-direction: row; */
         }
 
+        #content:hover #projects #opened {
+            display: inline;
+        }
+        #content:hover #projects #hided {
+            display: none;
+        }
 
+         #projects #opened  {
+             display: none;
+        }
+             
 
         footer{
             margin-top: 30px;
@@ -288,7 +297,7 @@
 
         <div id="projects">
             <H1>
-                Meus Projetos
+                Meus Projetos <img src="/imgs/eyeoff.png" id='hided' alt="hided" height="40px"><img src="/imgs/eyeon.png" id="opened" alt="opened" height="40px">
             </H1>
         </div>
         <hr class="hr2">
@@ -318,7 +327,7 @@
     <footer>
         <hr class="hr1">
         <p>
-            Minhas Informações pessoais
+            Minhas Informações.
         </p>
     </footer>
 
