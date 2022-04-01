@@ -1,80 +1,55 @@
-@media(max-width: 570px) {
-    body {
-        display: grid;
-        margin: 0px;
-        padding: 0;
-        border: 0;
-        grid-template-columns: 1fr;
-        grid-template-rows: 650px 1fr 50px;
-        grid-template-areas:
-            'header'
-            'main'
-            'footer';
-
+@media (max-width: 990px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        
     }
-
     header {
-        grid-area: header;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 390px 120px 140px;
-        grid-template-areas:
-            'capa'
-            'title'
-            'nav';
-    }
-
-    main {
-        grid-area: main;
-
-    }
-
-    footer {
-        grid-area: footer;
-
-    }
-
-    #language {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        height: 750px;
+        align-items: center;
     }
 
     #capa {
-        grid-area: capa;
-        margin: 0px;
-        padding: 0;
-        border: 0;
+        margin: 0;
+        height: 350px;
+    }
+    #capa img {
+        margin: 0;
     }
 
     #title {
-        grid-area: title;
-        font-size: 30px;
-        margin: 20px 0px 0px 20px;
-        padding: 0;
-        border: 0;
+        position: relative;
+        display: inline;
+        margin: 0;
+        height: 240px;
+        text-align: center;
     }
-
-    .button {
-        font-size: 20px;
-        margin: 0px;
-        padding: 7px 20px 5px 20px;
-        border: 0;
+    #title  p {
+        margin: 0;
+    }
+    #title > div {
+        margin: 0;
+    }
+    .button{
+        position: relative;
+        margin: 0;
     }
 
     #nav {
-        grid-area: nav;
-        margin: 0px;
-        padding: 0;
-        border: 0;
+        margin: 0;
+        height: 110px;
     }
-
-    #hr1 {
+    .hr1 {
+        margin-top: 15px;
+    }
+    #content{
         display: none;
     }
-
-    #hr2 {
+    footer{
         display: none;
     }
+    
 }
-
-
-/* @media(max-width: 990px) { */
