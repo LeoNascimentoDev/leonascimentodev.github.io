@@ -1,0 +1,45 @@
+@media( max-width: 570px){
+    body{
+        display: relative;
+        margin: 0px;
+        padding: 0;
+        border: 0;
+        
+    }
+    header{
+        grid-template-columns: 1fr;
+        grid-template-rows: 390px 200px 50px;
+        grid-template-areas:
+        'capa'
+        'title'
+        'nav';
+    }
+    #language {
+        display: none;
+    }
+
+    #capa{
+        margin: 0px;
+        padding: 0;
+        border: 0;
+    }
+    #title{
+        font-size: 30px;
+        margin: 20px 0px 0px 20px;
+        padding: 0;
+        border: 0;
+    }
+    .button{
+        font-size: 20px;
+        margin: 0px;
+        padding: 7px 20px 5px 20px;
+        border: 0;
+    }
+    #nav{
+        margin: 0px;
+        padding: 0;
+        border: 0;
+    }
+}
+
+

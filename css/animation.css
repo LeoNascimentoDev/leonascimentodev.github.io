@@ -1,0 +1,72 @@
+ /* animação */
+ #animation-right {
+    animation-duration: 3s;
+    animation-name: slide-right;
+}
+
+#animation-left {
+    animation-duration: 3s;
+    animation-name: slide-left;
+}
+
+#animation-top {
+    animation-duration: 3s;
+    animation-name: slide-top;
+}
+
+
+@keyframes slide-show {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 40%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide-top {
+    from {
+        margin-top: 50%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+    
+}
+
+@keyframes slide-down {
+    from {
+        margin-top: 100px;
+    }
+
+    to {
+        margin-top: 20px;
+    }
+    
+}
+
+@keyframes slide-left {
+    from {
+        margin-left: -50%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+
