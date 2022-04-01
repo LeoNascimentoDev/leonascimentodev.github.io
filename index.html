@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
     <!-- import css -->
 
@@ -21,219 +23,12 @@
     <link rel="stylesheet" href="/css/card.css">
     
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            border: 0;
-        }
-        
-        
-        
-        body {
-            padding: 0;
-            margin: 0;
-            border: 0;
 
-            /* background: url('/imgs/FUNDO_01.png') fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            background-size: 100vw 100vh; */
-            
-            background-color: rgb(50, 50, 50);
-            
-            display: flex;
-            flex-direction: column;
-        }
-        
-        
-        
-        
-        header {
-            background-color: rgba(0, 0, 0, 0.2);
-            display: grid;
-            grid-template-columns: 300px 350px 1fr;
-            grid-template-rows: 1fr 140px;
-            grid-template-areas:
-            'capa title language language'
-            'capa title nav nav ';
-            width: 100%;
-            height: 400px;
-        }
-        
-        
-        #capa {
-            grid-area: capa;
-            margin-left: 40px;
-        }
-        
-        #capa img {
-            margin-top: 40px;
-        }
-        
-        #title {
-            grid-area: title;
-            margin: 100px 0px 0px 0px;
-            color: aliceblue;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 60px;
-        }
-
-        #title>p {
-            margin: -10px 0px 0px 0px;
-            padding: 0px;
-        }
-        
-        
-        .button {
-            position: absolute;
-            margin-top: 40px;
-            margin-left: -50px;
-            color: aliceblue;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-            padding: 10px 35px 7px 35px;
-            border-radius: 5px;
-            background: rgb(197, 82, 62);
-            box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
-        }
-        
-        .button:hover {
-            background: rgb(177, 138, 131);
-            box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
-            color: rgb(27, 27, 27);
-        }
-        
-        .button:active {
-            color: aliceblue;
-            background: rgb(146, 77, 65);
-            box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
-        }
-        
-        #nav {
-            font-family: 'Boogaloo', cursive;
-            color: aliceblue;
-            grid-area: nav;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation-duration: 3s;
-            animation-name: slide-show;
-            height: 140px;
-        }
-        
-        #nav>div {
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        #nav>div>a {
-            text-decoration: none;
-            margin: 0px 20px 0px 20px;
-            
-        }
-        
-        #language {
-            grid-area: language;
-        }
-        
-        #language div {
-            position: absolute;
-            text-decoration: none;
-            right: 30px;
-            top: 10px;
-        }
-        
-        #language a {
-            text-decoration: none;
-            animation-duration: 3s;
-            animation-name: slide-left
-        }
-        
-        .hr1 {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, #CCC, transparent);
-            width: 100vw;
-            animation-duration: 3s;
-            animation-name: slide-left, slide-show;
-        }
-        
-        .hr2 {
-            margin-top: 20px;
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, #CCC, transparent);
-            width: 80vw;
-            animation-duration: 3s;
-            animation-name: slide-left, slide-show;
-        }
-        
-        
-        /* Parte da exibição dos projetos */
-        
-        #content {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-            width: 80%;
-        }
-        
-        #projects {
-            margin-top: 20px;
-            text-align: center;
-            font-family: 'Boogaloo', cursive;
-            color: aliceblue;
-            font-size: 20px;
-            animation-duration: 3s;
-            animation-name: slide-show, slide-down;
-        }
-        
-        
-        #hide {
-            background-color: rgba(88, 88, 88, 0.397);
-            display: flex;
-            flex-direction: row;
-            height: 0px;
-            overflow: hidden;
-            transition: .5s;
-        }
-        
-        #content:hover>#hide {
-            height: 400px;
-        }
-        
-        #content:hover #projects #opened {
-            display: inline;
-        }
-        
-        #content:hover #projects #hided {
-            display: none;
-        }
-        
-        #projects #opened {
-            display: none;
-        }
-        
-        
-        footer {
-            margin-top: 30px;
-            position: fixed;
-            bottom: 0;
-            background-color: rgba(88, 88, 88, 0.397);
-            font-size: 14px;
-            text-align: center;
-            color: #CCC;
-            font-family: Arial, Helvetica, sans-serif;
-            height: 50px;
-        }
 
         
-        </style>
+    </style>
 
+<link rel="stylesheet" href="/css/style.css">
 
 <link rel="stylesheet" href="/css/mediaquery.css">
 
@@ -253,14 +48,23 @@
 
         <div id="title">
             <P id="animation-left">
+               <h1>
                 LEONARDO
+               </h1> 
             </P>
             <P id="animation-right">
-                NASCIMENTO
+                <h1>
+                    NASCIMENTO
+                   </h1> 
+            </P>
+            <P id="animation-right">
+                <h4>
+                    Web Developer
+                   </h4> 
             </P>
 
             <div id="animation-top">
-                <a href="/about.html" class="button" title="A little about me!">Um pouco sobre
+                <a href="/about.html" class="button" title="A little about me!">Sobre
                     mim! </a>
             </div>
         </div>
