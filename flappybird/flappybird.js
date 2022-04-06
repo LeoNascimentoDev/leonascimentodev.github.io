@@ -14,31 +14,22 @@ let barrier_top = document.querySelector(".barrier_top")
 let barrier_bottom = document.querySelector(".barrier_bottom")
 let game_over = document.querySelector(".game_over")
 
-
-
-
-
 play_button.addEventListener("click", start)
 
 let link = ''
 bird.forEach(e => {
     e.addEventListener("click", select => {
-
         bird.forEach(ele => {
             ele.style.backgroundColor = "#46565d"
             ele.style.border = "none"
         })
-
         e.style.backgroundColor = "#728b96"
         e.style.border = "solid 1px black"
         link = e.getAttribute("src")
-        console.log('selecionou' + link)
     })
 });
 
-
 reset_button.addEventListener("click", reset)
-
 
 function reset() {
 
@@ -47,77 +38,15 @@ function reset() {
 
 }
 
-
-
-
-    
-    function start() {
-        selected_bird.setAttribute("src", link || "/flappybird/imgs/bird1.png")
-        selected_bird.style.height = "80px"
-        home.style.display = "none"
-        playing.style.display = "flex"
-        
-    
-
-    // let alt = 0
-    // let alt2 = 0
-    // let alt3 = 0
-    // let alt4 = 0
-
-    // game_area.addEventListener("click", upping)
-
-    // function dropping(a) {
-
-    //     selected_bird.style.marginTop = a + "px"
-
-    //     a = a + 2
-    //     setTimeout(function time() {
-
-
-    //         if (a < 500)
-    //             dropping(a)
-    //             else
-    //             gameOver()
-
-    //     }, 10);
-
-
-    // }
-
-    // dropping(50)
-
-
-
-    // function upping(a) {
-    //     setTimeout(function time() {
-    //         console.log("valor da subida" + alt)
-    //         alt2 = a > 0 ? a : alt;
-    //         console.log("valor verificado " + alt2)
-
-    //         alt3 = alt2 - 2
-
-    //         console.log(alt3)
-
-    //         selected_bird.style.marginTop = alt3 + "px"
-
-    //         if (alt3 != alt - 50) {
-    //             upping(alt3)
-    //         }
-    //         else
-    //             dropping(alt3)
-
-    //     }, 30);
-    // }
-
-
-
-  
+function start() {
+    selected_bird.setAttribute("src", link || "/flappybird/imgs/bird1.png")
+    selected_bird.style.height = "80px"
+    home.style.display = "none"
+    playing.style.display = "flex"
 
 
     let left = 80
     let allBarrier = document.querySelector(".flex2")
-
-
 
     function barrier() {
 
@@ -144,26 +73,28 @@ function reset() {
     barrier()
 
     let flaying = false
-    window.onmousedown =e => flaying = true
-    window.onmouseup=e => flaying = false
+    window.onmousedown = e => flaying = true
+    window.ontouchstart = e => flaying = true
+    window.onmouseup = e => flaying = false
+    window.ontouchend = e => flaying = false
     let newY = 0
-    setInterval(()=>{
+    setInterval(() => {
 
-        
-        function animar  (){
-            newY = (flaying ? newY-12 : newY+5)
-            
+
+        function animar() {
+            newY = (flaying ? newY - 15 : newY + 5)
+
             if (newY > 500)
-            gameOver()
-            if (newY<0) 
-                newY=0
-            
-            selected_bird.style.marginTop = newY+"px"
+                gameOver()
+            if (newY < 0)
+                newY = 0
+
+            selected_bird.style.marginTop = newY + "px"
         }
         animar()
-    
-        
-    },20)
+
+
+    }, 20)
 }
 
 function gameOver() {
