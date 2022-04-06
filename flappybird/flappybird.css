@@ -1,0 +1,128 @@
+body {
+    background-color: rgb(152, 168, 175);
+}
+
+.title {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 2.5em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 2px 1px 3px rgb(80, 80, 80);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-display {
+    display: flex;
+    flex-direction: column;
+    cursor: url(/flappybird/imgs/cursor.png), default !important;
+    box-shadow: 3px 3px 6px rgb(82, 82, 82);
+    width: 80vw;
+    height: 80vh;
+    background-color: #46565d;
+}
+
+
+.button {
+    cursor: url(/flappybird/imgs/cursor.png), default !important;
+    align-self: center;
+    position: relative;
+    margin-top: 20%;
+    width: 50%;
+    color: aliceblue;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 35px 7px 35px;
+    border-radius: 5px;
+    background: rgb(197, 82, 62);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+}
+
+.button:hover {
+    background: rgb(177, 138, 131);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+    color: rgb(27, 27, 27);
+}
+
+.button:active {
+    color: aliceblue;
+    background: rgb(146, 77, 65);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+    
+}
+
+[home] {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+}
+
+
+.selector {
+    cursor: url(/flappybird/imgs/cursor.png), default !important;
+    width: auto;
+    align-self: center;
+    margin-top: 10%;
+    margin: 50px 5px 0 5px;
+    text-decoration: none;
+}
+
+.bird:hover {
+    background-color: #728b96;
+    border: solid 1px black;
+
+}
+
+.bird {
+    align-self: center;
+    height: 80px;
+}
+
+[playing]{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height:100em;
+    width: 100em;
+}
+
+.game_area{
+    height: 90%;
+    width: 80vw;
+    background-color: skyblue;
+}
+.menu_area
+{
+    height: 10%;
+    width: 80vw;
+    align-self: flex-start;
+    bottom: 0px;
+    text-align: center;
+}
+.menu_area a {
+    display: inline-block;
+    margin-top: 2px;
+}
+
+#animation-show {
+    animation-duration: 1s;
+    animation-name: slide-show;
+}
+@keyframes slide-show {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
