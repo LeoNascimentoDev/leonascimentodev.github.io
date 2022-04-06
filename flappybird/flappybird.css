@@ -24,6 +24,8 @@ main {
     width: 80vw;
     height: 80vh;
     background-color: #46565d;
+    overflow: hidden;
+
 }
 
 
@@ -54,11 +56,11 @@ main {
     color: aliceblue;
     background: rgb(146, 77, 65);
     box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
-    
+
 }
 
 [home] {
-    display: none;
+    display: flex;
     flex-direction: column;
     text-align: center;
     color: aliceblue;
@@ -87,27 +89,31 @@ main {
     height: 80px;
 }
 
-[playing]{
-    display: flex;
+[playing] {
+    display: none;
     flex-direction: column;
     box-sizing: border-box;
-    height:100em;
+    height: 100em;
     width: 100em;
 }
 
-.game_area{
+.game_area {
+    display: flex;
+    flex-direction: row;
     height: 90%;
     width: 80vw;
     background-color: skyblue;
+    overflow: hidden;
 }
-.menu_area
-{
+
+.menu_area {
     height: 10%;
     width: 80vw;
     align-self: flex-start;
     bottom: 0px;
     text-align: center;
 }
+
 .menu_area a {
     display: inline-block;
     margin-top: 2px;
@@ -117,6 +123,7 @@ main {
     animation-duration: 1s;
     animation-name: slide-show;
 }
+
 @keyframes slide-show {
     0% {
         opacity: 0%;
@@ -125,4 +132,76 @@ main {
     100% {
         opacity: 100%;
     }
+}
+
+.game_over {
+    display: none;
+    color: aliceblue;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 80vw;
+    vertical-align: center;
+    align-items: center;
+}
+
+.flex1 {
+    width: 20%;
+}
+
+.flex1>img {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+.flex2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 72vh;
+    justify-content: space-between;
+}
+
+
+.barrier_top{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.barrier_bottom{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    background:linear-gradient(60deg, #639301, #a5eb82);
+}
+.body_top{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    background:linear-gradient(60deg, #639301, #a5eb82);
+}
+
+.barrier_bottom > .body {
+    height: 150px;
+    width: 50px;
+}
+.barrier_top > .body {
+    height: 150px;
+    width: 50px;
+}
+.barrier_bottom > .body_top {
+    height: 20px;
+    width: 70px;
+}
+.barrier_top > .body_top {
+    height: 20px;
+    width: 70px;
 }
