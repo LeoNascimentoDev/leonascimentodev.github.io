@@ -48,6 +48,11 @@ function start() {
     let left = 80
     let allBarrier = document.querySelector(".flex2")
 
+    let barontarget1 = 0
+    let barontarget2 = 0
+
+
+
     function barrier() {
 
         allBarrier.style.left = left + "vw"
@@ -63,10 +68,16 @@ function start() {
                 let heightBarrier2 = Math.trunc(Math.random() * (220 - 50) + 50)
                 barrier_top.firstElementChild.style.height = heightBarrier1 + "px"
                 barrier_bottom.children[1].style.height = heightBarrier2 + "px"
+                barontarget1 = heightBarrier1
+                barontarget2 = heightBarrier2
+
                 barrier()
             }
 
+            
+
         }, 30);
+
 
     }
 
@@ -88,13 +99,28 @@ function start() {
                 gameOver()
             if (newY < 0)
                 newY = 0
-
+            if (newY < barontarget1)
+            gameOver()
             selected_bird.style.marginTop = newY + "px"
+
+
         }
         animar()
 
 
     }, 20)
+
+    function colision(elA, elB) {
+        const a = elA.getBoundingClientRect()
+        const b = elB.getBoundingClientRect()
+
+        if (a.left + a.width >= b.left + b.width)
+            console.log("colidiu")
+
+    }
+
+    // colision(selected_bird,barrier_top.firstElementChild)
+
 }
 
 function gameOver() {
