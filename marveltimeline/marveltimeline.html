@@ -46,7 +46,7 @@
                 <a href="https://www.imdb.com/title/tt0371746/">
                     <img src="/marveltimeline/imgs/01_Iron_Man_1.jpg" alt="">
                 </a>
-                <div class="info" id="first">
+                <div class="info" id="">
                     <h2 class="title">
                         Homem de Ferro
                     </h2>
@@ -69,7 +69,7 @@
                 <a href="https://www.imdb.com/title/tt0800080/?ref_=fn_al_tt_1">
                     <img src="/marveltimeline/imgs/02_The_Incrible_Hulk.jpg" alt="">
                 </a>
-                <div class="info" id="second">
+                <div class="info" id="">
                     <h2>O Incrível Hulk
 
                     </h2>
@@ -84,11 +84,11 @@
                     </h3>
                 </div>
             </div>
-            <div class="movieCard" id="Three">
+            <div class="movieCard" id="three">
                 <a href="https://www.imdb.com/title/tt1228705/">
                     <img src="/marveltimeline/imgs/03_Iron_Man_2.jpg" alt="">
                 </a>
-                <div class="info" id="third">
+                <div class="info" id="">
                     <h2>Homem de Ferro 2
                     </h2>
                     <h3>
@@ -108,6 +108,26 @@
                 </div>
             </div>
 
+            <div class="movieCard" id="four">
+                <a href="https://www.imdb.com/title/tt0800080/?ref_=fn_al_tt_1">
+                    <img src="/marveltimeline/imgs/02_The_Incrible_Hulk.jpg" alt="">
+                </a>
+                <div class="info" id="">
+                    <h2>outro
+
+                    </h2>
+                    <h3>
+                        13 de junho de 2008 </h3>
+                    <h3>
+                        O cientista Bruce Banner se esconde no Brasil enquanto busca desesperadamente a cura da mutação
+                        que
+                        o transforma em um monstro incontrolável. Só assim ele poderá novamente levar uma vida normal e
+                        ficar ao lado da mulher que ama. Porém, durante este processo, ele precisa lutar contra o
+                        Abominável, um novo inimigo que quer capturá-lo.
+                    </h3>
+                </div>
+            </div>
+
         </div>
     </main>
     <footer>
@@ -121,5 +141,50 @@
 
 <script type="text/javascript" src="/marveltimeline/marvel.js"></script>
 
+
+<script>
+  var largura = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+  let links =[]
+    
+    function sizeOfThings (){
+       largura = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+
+
+        if (largura < 700)
+        {
+           let a = Array.from(document.querySelectorAll('a'))
+            a.forEach(e=>{
+                links.push(e.href)
+                e.removeAttribute("href")
+            })
+        }
+
+        // if (largura > 700)
+        // {
+        //    let a = Array.from(document.querySelectorAll('a'))
+        //     a.forEach(e=>{
+        //         console.log(links);
+        //         let i =0
+        //         e.href = links[i]
+        //         i++
+        //     })
+        // }
+    }
+    
+    window.addEventListener('resize', function(){
+        sizeOfThings();
+    });
+    
+
+
+    
+    
+    
+</script>
 
 </html>
