@@ -138,48 +138,14 @@
 </body>
 
 <script src="jquery.js"></script>
+<script src="mobile.js"></script>
+
 
 <script type="text/javascript" src="/marveltimeline/marvel.js"></script>
 
 
 <script>
-  var largura = window.innerWidth
-        || document.documentElement.clientWidth
-        || document.body.clientWidth;
-  let links =[]
-    
-    function sizeOfThings (){
-       largura = window.innerWidth
-        || document.documentElement.clientWidth
-        || document.body.clientWidth;
 
-
-
-        if (largura < 700)
-        {
-           let a = Array.from(document.querySelectorAll('a'))
-            a.forEach(e=>{
-                links.push(e.href)
-                e.removeAttribute("href")
-            })
-        }
-
-        // if (largura > 700)
-        // {
-        //    let a = Array.from(document.querySelectorAll('a'))
-        //     a.forEach(e=>{
-        //         console.log(links);
-        //         let i =0
-        //         e.href = links[i]
-        //         i++
-        //     })
-        // }
-    }
-    
-    window.addEventListener('resize', function(){
-        sizeOfThings();
-    });
-    
 
 
     
