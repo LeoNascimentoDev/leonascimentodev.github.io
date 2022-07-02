@@ -1,12 +1,43 @@
+// detectar se é mobile
+
+$(function () {
+    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+    if (isMobile) {
+
+        $('.movieCard').children('a').children('img').addClass('mobile')
+        $('.movieCard').children('a').children('img').removeClass('notmobile')
+
+        // código para retirar links quando for mobile
+
+        // let links = []
+        // let a = Array.from(document.querySelectorAll('a'))
+        // a.forEach(e => {
+        //     links.push(e.href)
+        //     e.removeAttribute("href")
+        // })
+
+
+
+        // código para retirar links quando for mobile   // Jquery
+
+
+        $("a").click(function (event) {
+            event.preventDefault()
+
+        })
+    }
+});
+
+
 // jquery para animar as informações sobre o filme
 $('.movieCard').children('a').children('img').addClass('notmobile')
-$('.movieCard').children('a').children('img').addClass('mobile')
 
 $(function () {
 
     // $('.movieCard').children('a').children('img').addClass('mobile')
 
-    
+
     $('.info').hide(0)
     $('.movieCard').hover(
         function () {
@@ -31,6 +62,8 @@ $(function () {
                 opacity: '0.2',
                 width: '30vw'
             }, 500)
+
+
         })
 })
 
@@ -51,25 +84,4 @@ movieCard.forEach(e => {
 })
 
 
-// código para retirar links quando for mobile
 
-
-
-$(function () {
-    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-    if (isMobile) {
-
-        $('.movieCard').children('a').children('img').removeClass('notmobile')
-
-
-        let links = []
-        let a = Array.from(document.querySelectorAll('a'))
-        a.forEach(e => {
-            links.push(e.href)
-            e.removeAttribute("href")
-        })
-
-        console.log('mobile');
-    }
-});
