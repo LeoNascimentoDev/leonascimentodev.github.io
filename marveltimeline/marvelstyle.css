@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
 }
 
 .tittle {
@@ -26,7 +27,7 @@ nav {
 button {
     width: 20vw;
     border: 0;
-    margin: 0 2vw;
+    margin: 2vw 2vw;
     color: aliceblue;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.6vw;
@@ -35,6 +36,7 @@ button {
     border-radius: 12px;
     background: brown;
     box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+    text-decoration: none;
 }
 
 button:hover {
@@ -49,21 +51,22 @@ button:active {
     box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
 }
 
-footer {
+footer,h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2vh;
-
-}
-
-footer h4 {
-    position: absolute;
-    text-align: center;
-    font-size: 1.2vw;
-    color: aliceblue;
+    background-color: rgb(60, 60, 60);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    margin: 10px 0 10px 0;
 }
+
+footer a {
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
 
 main {
     margin-top: 5vh;
@@ -88,9 +91,14 @@ main {
 }
 
 .movieCard a img {
+    
+    display: flex;
+    flex-direction: column;
     border-radius: 50px 20px 100px;
     width: 250px;
-    opacity: 0.2
+    opacity: 0.2;
+    margin: 20px 20px 0 20px;
+    
 }
 
 .info {
@@ -113,6 +121,13 @@ main {
 
 }
 
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+}
 
 @media (max-width: 700px) {
 

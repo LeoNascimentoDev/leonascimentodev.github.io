@@ -22,7 +22,7 @@ $(function () {
         // código para retirar links quando for mobile   // Jquery
 
 
-        $("a").click(function (event) {
+        $("img").click(function (event) {
             event.preventDefault()
 
         })
@@ -50,6 +50,29 @@ $(function () {
                 opacity: '1',
                 width: '40vw'
             }, 500)
+
+            let link = $(this).children('a').children("img[href]").prevObject[0].href
+            $(this).children('a').addClass('hasbutton')
+
+
+            function hasButton() {
+
+                $(this).children('a').children('button')
+                [0]
+            }
+
+            if (hasButton() == undefined) {
+                $(this).children('.hasbutton').append("<button>IMDB</button>")
+            }
+
+
+
+
+            $(this).css('background', 'rgb(60, 60, 60)')
+            $(this).css('width', '100vw')
+            $(this).css('justify-content', 'center')
+
+
         }
         ,
         function () {
@@ -62,6 +85,13 @@ $(function () {
                 opacity: '0.2',
                 width: '30vw'
             }, 500)
+
+            $(this).children('a').children('button').remove()
+
+            $(this).children('a').removeClass('hasbutton')
+
+
+            $(this).css('background', 'rgb(41, 41, 41)   ')
 
 
         })
