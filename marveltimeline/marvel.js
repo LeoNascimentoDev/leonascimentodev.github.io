@@ -8,7 +8,14 @@ $(function () {
         $('.movieCard').children('a').children('img').addClass('mobile')
         $('.movieCard').children('a').children('img').removeClass('notmobile')
 
-        // código para retirar links quando for mobile
+        // código para retirar links da imagem quando for mobile   // Jquery
+
+        $("img").click(function (event) {
+            event.preventDefault()
+
+        })
+
+        // código para retirar links quando for mobile javascript
 
         // let links = []
         // let a = Array.from(document.querySelectorAll('a'))
@@ -17,20 +24,12 @@ $(function () {
         //     e.removeAttribute("href")
         // })
 
-
-
-        // código para retirar links quando for mobile   // Jquery
-
-
-        $("img").click(function (event) {
-            event.preventDefault()
-
-        })
     }
 });
 
 
 // jquery para animar as informações sobre o filme
+
 $('.movieCard').children('a').children('img').addClass('notmobile')
 
 $(function () {
@@ -51,29 +50,33 @@ $(function () {
                 width: '40vw'
             }, 500)
 
-            let link = $(this).children('a').children("img[href]").prevObject[0].href
             $(this).children('a').addClass('hasbutton')
 
-
+            // verificar se ja existe botão
             function hasButton() {
 
                 $(this).children('a').children('button')
                 [0]
             }
-
+            // criar botão caso não exista
             if (hasButton() == undefined) {
                 $(this).children('.hasbutton').append("<button>IMDB</button>")
             }
 
 
-
+            //modificar div selecionada
 
             $(this).css('background', 'rgb(60, 60, 60)')
             $(this).css('width', '100vw')
             $(this).css('justify-content', 'center')
 
 
+        
+            
         }
+
+
+
         ,
         function () {
             $(this).children('.info').hide(300)
@@ -86,11 +89,12 @@ $(function () {
                 width: '30vw'
             }, 500)
 
+            //remover botão
             $(this).children('a').children('button').remove()
-
+            //remover classe 'tem botão'
             $(this).children('a').removeClass('hasbutton')
 
-
+            //retornar div a valores padrões
             $(this).css('background', 'rgb(41, 41, 41)   ')
 
 
@@ -101,17 +105,18 @@ $(function () {
 // script para fazer o texto aparecer ora para direita, ora para esquerda.
 
 
-let movieCard = Array.from(document.querySelectorAll('.movieCard'))
-let a = []
-let i = 0
-movieCard.forEach(e => {
-    a.push(e.firstElementChild)
-    if (movieCard.indexOf(e) % 2 != 0) {
-        movieCard[i].removeChild(a[i])
-        movieCard[i].appendChild(a[i])
-    }
-    i++
-})
+
+// let movieCard = Array.from(document.querySelectorAll('.movieCard'))
+// let a = []
+// let i = 0
+// movieCard.forEach(e => {
+//     a.push(e.firstElementChild)
+//     if (movieCard.indexOf(e) % 2 != 0) {
+//         movieCard[i].removeChild(a[i])
+//         movieCard[i].appendChild(a[i])
+//     }
+//     i++
+// })
 
 
 
