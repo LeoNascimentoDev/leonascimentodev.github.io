@@ -79,7 +79,7 @@ $(function () {
 
         ,
         function () {
-            $(this).children('.info').hide(300)
+            $(this).children('.info').hide(400)
             $(this).children('a').children('img').filter('.notmobile').animate({
                 opacity: '0.2',
                 width: '250px'
