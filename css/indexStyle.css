@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: aliceblue;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: 300px;
+    grid-template-areas:
+        'cover title navSocial ';
+    width: 100%;
+}
+
+
+#cover {
+    display: flex;
+    flex-direction: column;
+    grid-area: cover;
+    padding: 20px 20px 20px 20px;
+    
+}
+
+#cover img {
+    height: 250px;
+    align-self: center;
+}
+
+#title {
+    grid-area: title;
+    margin: 30px 0px 0px 0px;
+    color: aliceblue;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title>p {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+
+
+#title h4 {
+    font-weight: 200;
+}
+
+#about {
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.button a {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    padding: 6px 25px 5px 25px;
+    border-radius: 5px;
+    background: rgb(141, 49, 32);
+    box-shadow: 2px 2px 0px 0px rgb(92, 39, 29);
+
+}
+
+.button a:hover {
+    background: rgb(177, 138, 131);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+    color: rgb(27, 27, 27);
+}
+
+.button a:active {
+
+    color: aliceblue;
+    background: rgb(146, 77, 65);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+}
+
+#nav-social {
+    font-family: 'Amatic SC', cursive;
+    padding: 20px 0px 20px 0px;
+    color: aliceblue;
+    grid-area: navSocial;
+    display: flex;
+    flex-direction: column;
+    align-items: bottom;
+    text-align: center;
+    animation-name: slide-show;
+    animation-duration: 3s;
+}
+
+
+#nav-social>div>a {
+    text-decoration: none;
+    margin: 0px 15px 0px 15px;
+}
+
+.icon {
+    width: 25px;
+}
+
+.hr1 {
+    border: 0;
+    height: 1.5px;
+    background-image: linear-gradient(to right, transparent, #CCC, transparent);
+    width: 100vw;
+    animation-duration: 4s;
+    animation-name: slide-left, slide-show;
+}
+
+
+
+/* Parte da exibição dos projetos */
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px 50px 100px;
+}
+
+#nav-projects {
+    font-weight: 300;
+    color: aliceblue;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#nav-projects :nth-last-child(1) {
+    font-size: 15px;
+}
+
+#nav-filter {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px 0;
+}
+
+#nav-filter .button.bt-selected{
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(45, 47, 49);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    padding: 8px 25px 8px 25px;
+    border-radius: 5px;
+    background: rgb(187, 187, 205);
+}
+
+#nav-filter .button{
+    margin: 0 15px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    padding: 8px 25px 8px 25px;
+    border-radius: 5px;
+    background: rgb(63, 63, 65);
+}
+
+#nav-filter.button:hover {
+    background: rgb(177, 138, 131);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+    color: rgb(27, 27, 27);
+}
+
+.button a:active {
+
+    color: aliceblue;
+    background: rgb(146, 77, 65);
+    box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+}
+
+
+
+
+
+
+/* footer da página*/
+
+footer {
+
+    display: none;
+
+    margin-top: 30px;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(88, 88, 88, 0.397);
+    font-size: 14px;
+    text-align: center;
+    color: #CCC;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+}

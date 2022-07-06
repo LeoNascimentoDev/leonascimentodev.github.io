@@ -1,19 +1,21 @@
- /* animação */
- #animation-right {
-    animation-duration: 3s;
-    animation-name: slide-right;
-}
-
-#animation-left {
-    animation-duration: 3s;
+#first-name{
+    animation-duration: 2s;   
     animation-name: slide-left;
 }
-
-#animation-top {
-    animation-duration: 3s;
-    animation-name: slide-top;
+#last-name{
+    animation-name: slide-right;
+    animation-duration: 2s;   
 }
 
+header .button, #profission {
+    animation-name: slide-show;
+    animation-duration: 4s;
+
+}
+#cover img {
+    animation-name: slide-show;
+    animation-duration: 4s;
+}
 
 @keyframes slide-show {
     0% {

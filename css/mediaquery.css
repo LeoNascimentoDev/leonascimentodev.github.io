@@ -1,4 +1,4 @@
-@media (max-width: 990px) {
+@media (max-width: 830px) {
     body {
         display: flex;
         flex-direction: column;
@@ -10,24 +10,16 @@
     header {
         display: flex;
         flex-direction: column;
-        height: 750px;
+        height: auto;
         align-items: center;
     }
 
-    #capa {
-        margin: 0;
-        height: 350px;
-    }
-
-    #capa img {
-        margin: 0;
-    }
 
     #title {
         position: relative;
         display: inline;
         margin: 0;
-        height: 240px;
+        height: auto;
         text-align: center;
     }
 
@@ -48,29 +40,10 @@
         margin: 0px;
     }
 
-    #nav {
-        margin: 0;
-        height: 110px;
-    }
+    
 
     .hr1 {
         margin-top: 15px;
-    }
-
-    #hide {
-
-        display: inline-block;
-        transition: 0s;
-        height: 700px;
-    }
-
-    #hide #ul1{
-        display: block;
-        top: 1050px
-    }
-    #hide #ul2{
-        display: block;
-        top: 1300px
     }
 
     footer {

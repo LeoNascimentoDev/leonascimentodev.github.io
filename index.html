@@ -14,8 +14,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+    <!-- navegação-->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <!-- botão -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
@@ -23,15 +28,9 @@
 
     <link rel="stylesheet" href="/css/animation.css">
 
-    <link rel="stylesheet" href="/css/card.css">
+    <!-- <link rel="stylesheet" href="/css/card.css"> -->
 
-    <style>
-
-
-
-    </style>
-
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/indexStyle.css">
 
     <link rel="stylesheet" href="/css/mediaquery.css">
 
@@ -43,94 +42,99 @@
 <body>
     <header>
 
-        <div id="capa">
-            <img src="/imgs/Leonardo.png" id="animation-left" alt="Leonardo Nascimento" height="350px"
-                title="Leonardo Nascimento">
+        <div id="cover">
+            <img src="/imgs/Leonardo.png" id="animation-left" alt="Leonardo Nascimento" title="Leonardo Nascimento">
         </div>
 
         <div id="title">
             <P>
-            <h1 id="animation-left">
+            <h1 id="first-name">
                 LEONARDO
             </h1>
             </P>
             <P>
-            <h1 id="animation-right">
+            <h1 id="last-name">
                 NASCIMENTO
             </h1>
             </P>
             <P>
-            <h4 id="animation-top">
-                Web Developer
+            <h4 id="profission">
+                Developer
             </h4>
             </P>
-
-            <div id="animation-top">
-                <a href="/about.html" class="button" title="A little about me!">Sobre
-                    mim! </a>
+            <div class="button" id="about">
+                <a href="/about.html"  title="A little about me!">Sobre
+                    mim </a>
             </div>
         </div>
 
-        <div id="nav">
+        <div id="nav-social">
             <div>
                 <h1>Minhas Mídias Sociais </h1>
             </div>
             <div>
-                <a href="https://github.com/LeoNascimentoDev" class="icon" title="My Github Page">
-                    <img src="/imgs/Git_Hub.png" alt="My github Page" height="40px">
+                <a href="https://github.com/LeoNascimentoDev" title="My Github Page">
+                    <img class="icon" src="/imgs/Git_Hub.png" alt="My github Page">
                 </a>
-                <a href="https://www.linkedin.com/in/leonascimentodev/" class="icon" title="My Linkedin Page">
-                    <img src="/imgs/Linkedin.png" alt="My github Page" height="40px">
+                <a href="https://www.linkedin.com/in/leonascimentodev/" title="My Linkedin Page">
+                    <img class="icon" src="/imgs/Linkedin.png" alt="My github Page">
                 </a>
-                <a href="https://twitter.com/onossoleo" class="icon" title="My Twitter Page">
-                    <img src="/imgs/twitter.png" alt="My github Page" height="40px">
+                <a href="https://twitter.com/onossoleo" title="My Twitter Page">
+                    <img class="icon" src="/imgs/twitter.png" alt="My github Page">
                 </a>
-                <a href="https://www.youtube.com/" class="icon" title="My Youtube Page">
-                    <img src="/imgs/Youtube.png" alt="My github Page" height="40px">
+                <a href="https://www.youtube.com/" title="My Youtube Page">
+                    <img class="icon" src="/imgs/Youtube.png" alt="My github Page">
                 </a>
             </div>
         </div>
 
         </div>
-        <div id="language">
-            <div>
-                <a href="https://leonascimentodev.github.io/">
-                    <img src="/imgs/brasil.png" alt="PT-BR" height="40px" title="Original Language">
-                </a>
-                <a href="https://leonascimentodev-github-io.translate.goog/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp"
-                    title="Traduction">
-                    <img src="/imgs/eua.png" alt="EN-USA" height="40px" title="Traduction for English">
-                </a>
-            </div>
-        </div>
+
 
         <hr class="hr1">
 
     </header>
 
     <main id="content">
-
-        <div id="projects">
-            <H1>
-                Meus Projetos <img src="/imgs/eyeoff.png" id='hided' alt="hided" height="40px"><img
-                    src="/imgs/eyeon.png" id="opened" alt="opened" height="40px">
-            </H1>
+ 
+        <div id="nav-projects">
+            <p>
+                Projetos
+            </p>    
+            <p>
+                Selecione os filtros desejados:
+            </p>    
         </div>
-        <hr class="hr2">
+
+        <nav id="nav-filter">
+            <div class="button bt-selected">Filtro 1</div>
+            <div class="button"> Filtro 2</div>
+            <div class="button"> Filtro 3</div>
+            <div class="button"> Filtro 4</div>
+            <div class="button"> Filtro 5</div>
+            <div class="button"> Filtro 6</div>
+            <div class="button"> Filtro 7</div>
+        </nav>
 
 
-        <div id="hide">
+        <div id="allCards">
 
             <ul id="ul1">
                 <li>
-                    <a href="/flappybird/flappybird.html">
-                        <span>Flappy Bird Game</span>
-                    </a>
+                    <div class="cards">
+                        <a href="/flappybird/flappybird.html">
+                            <span>Flappy Bird Game</span>
+                        </a>
+                    </div>
                 </li>
                 <li>
+                    <div class="cards">
+
                     <a href="/marveltimeline/marveltimeline.html">
                         <span>Marvel Movies Timeline</span>
                     </a>
+                </div>
+
                 </li>
                 <li>
                     <a href="index.html">
@@ -169,7 +173,6 @@
             </ul>
 
         </div>
-        <hr class="hr2">
 
 
     </main>
@@ -187,7 +190,7 @@
 
 <script>
 
- 
+
 
 </script>
 
