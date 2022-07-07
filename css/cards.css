@@ -1,0 +1,20 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+ 
+}
+.cards a{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px gold;
+    background-color: green;
+    width: 200px;
+    height: auto;
+}
+.cards img{ 
+    
+    width: 180px;
+}
+li{
+    list-style: none;
+}
