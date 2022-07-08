@@ -39,6 +39,19 @@
         margin: 0px;
     }
 
+    main {
+        padding: 20px 10px 30px 10px;
+        align-content: center;
+    }
+    #nav-filter{
+        justify-content: center;
+    }
+    .allCards{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
     footer .hr1{
         height: 1.5px;
     }

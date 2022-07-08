@@ -20,6 +20,8 @@
     <!-- Títulos-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
 
+
+
     <!-- import css -->
 
     <link rel="stylesheet" href="/css/animation.css">
@@ -69,13 +71,13 @@
                     <img class="icon" src="/imgs/Git_Hub.png" alt="My github Page">
                 </a>
                 <a href="https://www.linkedin.com/in/leonascimentodev/" title="My Linkedin Page">
-                    <img class="icon" src="/imgs/Linkedin.png" alt="My github Page">
+                    <img class="icon" src="/imgs/Linkedin.png" alt="My Linkedin Page">
                 </a>
                 <a href="https://twitter.com/onossoleo" title="My Twitter Page">
-                    <img class="icon" src="/imgs/twitter.png" alt="My github Page">
+                    <img class="icon" src="/imgs/twitter.png" alt="My Twitter Page">
                 </a>
-                <a href="https://www.youtube.com/" title="My Youtube Page">
-                    <img class="icon" src="/imgs/Youtube.png" alt="My github Page">
+                <a href="https://www.youtube.com/" title="My Youtube Page - Soon">
+                    <img class="icon" src="/imgs/Youtube.png" alt="My Youtube Page">
                 </a>
             </div>
         </div>
@@ -131,42 +133,98 @@
             </a>
         </nav>
 
-        <div id="allCards">
+        <div class="allCards">
 
-            <ul id="ul1">
-                <li>
-                    <div class="cards">
-                        <a href="/flappybird/flappybird.html">
-                            <img src="/imgs/exemplo.png" alt="">
-                            <span>Flappy Bird Game</span>
-                            <span>Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui Texto aqui </span>
 
+            <div class="card">
+                <a class="card-link" href="/flappybird/flappybird.html">
+                    <img class="card-cover" src="/imgs/flapbirdv1.png" alt="">
+                    <span class="card-title">Flappy Bird V1.0</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Aqui vai um texto sobre o card e sobre a tecnologia utilizada
+                    </span>
+                    <div class="card-git">
+                        <a href="#">
+                                Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
                         </a>
                     </div>
-                </li>
-                <li>
-                    <div class="cards">
+                </div>
+            </div>
 
-                        <a href="/marveltimeline/marveltimeline.html">
-                            <!-- <img src="/imgs/exemplo.png" alt=""> -->
-                            <span>Marvel Movies Timeline</span>
+            <div class="card">
+                <a class="card-link" href="/marveltimeline/marveltimeline.html">
+                    <img class="card-cover" src="/imgs/marveltimeline.jpg" alt="">
+                    <span class="card-title">Marvel TimeLine WebSite</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Aqui vai um texto sobre o card e sobre a tecnologia utilizada
+                    </span>
+                    <div class="card-git">
+                        <a href="#">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
                         </a>
                     </div>
+                </div>
+            </div>
 
-                </li>
-                <li>
-                    <a href="index.html">
-                        <span>Projeto 3</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <span>CAPA</span>
-                    </a>
-                </li>
+            <div class="card">
+                <a class="card-link" href="/marveltimeline/marveltimeline.html">
+                    <img class="card-cover" src="/imgs/exemplo.png" alt="">
+                    <span class="card-title">Marvel TimeLine</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Aqui vai um texto sobre o card e sobre a tecnologia utilizada
+                    </span>
+                    <div class="card-git">
+                        <a href="#">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-            </ul>
+            <div class="card">
+                <a class="card-link" href="/marveltimeline/marveltimeline.html">
+                    <img class="card-cover" src="/imgs/exemplo.png" alt="">
+                    <span class="card-title">Marvel TimeLine</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Aqui vai um texto sobre o card e sobre a tecnologia utilizada
+                    </span>
+                    <div class="card-git">
+                        <a href="#">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="card">
+                <a class="card-link" href="/marveltimeline/marveltimeline.html">
+                    <img class="card-cover" src="/imgs/exemplo.png" alt="">
+                    <span class="card-title">Marvel TimeLine</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Aqui vai um texto sobre o card e sobre a tecnologia utilizada
+                    </span>
+                    <div class="card-git">
+                        <a href="#">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
+                        </a>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -188,7 +246,26 @@
 
 <script src="/JS/jquery.js"></script>
 <script src="/JS/index.js"></script>
+
 <script>
+
+    // $('.card-about.hide').hide()
+
+    $('.card-link').click(function (e) {
+        if ($(this).parent().hasClass('selected')) {
+            return
+        }
+        else {
+            e.preventDefault()
+            $('.card-link').parent().removeClass('selected').addClass('not-selected')
+            $(this).parent().addClass('selected').removeClass('not-selected')
+            return (console.log('não'))
+        }
+    })
+
+    $('.button').click(function (e) {
+        $('.card-link').parent().removeClass('selected not-selected')
+    })
 
 
 </script>

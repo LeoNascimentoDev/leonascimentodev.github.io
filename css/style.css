@@ -2,8 +2,7 @@
     padding: 0;
     margin: 0;
     border: 0;
-    color: aliceblue;
-
+    
 }
 
 body {
@@ -13,7 +12,6 @@ body {
     background-color: rgb(50, 50, 50);
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 header {
@@ -23,7 +21,6 @@ header {
     grid-template-rows: auto;
     grid-template-areas:
         'cover title navSocial ';
-    width: 100%;
     font-size: 1rem;
 }
 
@@ -111,13 +108,15 @@ header {
     width: 25px;
 }
 
+/* modificar */
 .hr1 {
+    margin: 0;
     border: 0;
     height: 1.5px;
     background-image: linear-gradient(to right, transparent, #CCC, transparent);
-    width: 100vw;
     animation-duration: 4s;
     animation-name: slide-left, slide-show;
+    width: 95vw;
 }
 
 
@@ -126,8 +125,7 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    padding: 20px 100px 50px 100px;
-    height: 100vh;
+    padding: 20px 100px 30px 100px;
 }
 
 #nav-projects {
@@ -196,13 +194,13 @@ main {
 /* footer da página*/
 
 footer {
-    display: contents;
-    margin-top: 30px;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
     bottom: 0;
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(70, 70, 70);
     font-size: 14px;
     text-align: center;
     color: #CCC;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }

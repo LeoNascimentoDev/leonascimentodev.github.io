@@ -5,5 +5,3 @@
         $(this).toggleClass('bt-selected')
     })  
 
-    // Cards
-    
