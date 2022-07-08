@@ -84,6 +84,10 @@ li {
 
     border: solid 2px rgb(100, 100, 100);
     transform: scale(1.2);
+    /* transform: rotate3D(1, 0.5, 0, 30deg);    */
+    /* transform: rotateY(30deg);
+    transform: rotateZ(20deg);
+    transform: rotateX(20deg); */
     transition-duration: 0.6s;
 }
 

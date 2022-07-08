@@ -147,7 +147,7 @@
                     </span>
                     <div class="card-git">
                         <a href="#">
-                                Mais Informações
+                            Mais Informações
                             <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
                         </a>
                     </div>
@@ -259,7 +259,21 @@
             e.preventDefault()
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
-            return (console.log('não'))
+
+            // let mouse = []
+            // let cal = []
+            // let call = []
+            // $(this).parent().on("mousemove", function (event) {
+            //     mouse = [event.pageX, event.pageY]
+            //     cal = [(event.pageX - $(this).position().left) / 250, (event.pageY - $(this).position().top) / (350)]
+            //     call = [cal[0].toFixed(1), cal[1].toFixed(1)]
+            //     let ele = document.getElementsByClassName('selected').item(0)
+            //     let ell = call[1]*60-20
+            //     console.log(ell);
+            //     this.style.transform = "rotate3d("+1+","+1+",0,"+ell+"deg)"//`rotate3d(${call[0]},${cal[1]},0,30deg)`
+            // });
+
+  
         }
     })
 
