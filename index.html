@@ -249,7 +249,22 @@
 
 <script>
 
-    // $('.card-about.hide').hide()
+    $('.card-link').on('touchstart', function (e){
+        if ($(this).parent().hasClass('selected')) {
+            return
+        }
+        else {
+            e.preventDefault()
+            $('.card-link').parent().removeClass('selected').addClass('not-selected')
+            $(this).parent().addClass('selected').removeClass('not-selected')
+        }
+    })
+
+    $('.button').on('touchstart',function (e) {
+        $('.card-link').parent().removeClass('selected not-selected')
+    })
+
+
 
     $('.card-link').click(function (e) {
         if ($(this).parent().hasClass('selected')) {
@@ -260,6 +275,7 @@
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
 
+            // a ser implementado card 3d!!!
             // let mouse = []
             // let cal = []
             // let call = []
@@ -272,7 +288,6 @@
             //     console.log(ell);
             //     this.style.transform = "rotate3d("+1+","+1+",0,"+ell+"deg)"//`rotate3d(${call[0]},${cal[1]},0,30deg)`
             // });
-
   
         }
     })
