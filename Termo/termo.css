@@ -1,0 +1,48 @@
+html{
+    height: 100vh;
+}
+body{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    /* padding: 10px; */
+    margin: 0;
+    height: 100%;
+}
+header {
+    font-size: 1.5rem;
+    height: 10%;
+}
+main{
+height: auto;
+}
+.game-area{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+}
+.li1, .li2, .li3, .li4, .li5,.li6{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.l1, .l2, .l3, .l4, .l5,.l6{
+    background-color: rgb(94, 86, 81);
+    padding: 20px;
+    margin: 0px 5px 0px 5px;
+    border-radius: 5px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    align-self: center;
+    background-color: aquamarine;
+}
