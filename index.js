@@ -19,7 +19,6 @@ $(function () {
             e.preventDefault()
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
-            alert('touch')
 
         }
     })
@@ -38,7 +37,6 @@ $(function () {
             e.preventDefault()
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
-            alert('mouse')
 
             // a ser implementado card 3d!!!
             // let mouse = []
