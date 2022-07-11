@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="termo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -63,8 +66,28 @@
         </div>
     </main>
     <footer>
-        TECLADO
+        <input id="word" type="text">
+        <!-- <input id="word" type="text" onkeyup="keyUP(this)"> -->
     </footer>
 </body>
+<script>
+
+    // let key = " "
+    // function keyUP(keyup) {
+    //     key=keyup
+    //     console.log(key)
+    // }
+    // let word = document.getElementById("word").value
+    // console.log(word);
+
+    // var numerico = this.value.replace(/[^0-9\.]/g, '');
+    let key = document.querySelector('.li1 .l1')
+    document.addEventListener('keyup', function (e) {
+        console.log(e.key);
+        key.append(e.key)
+    }
+    )
+
+</script>
 
 </html>
