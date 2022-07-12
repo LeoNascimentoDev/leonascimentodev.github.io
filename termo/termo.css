@@ -105,4 +105,6 @@ footer {
     align-self: center;
     background-color: rgb(108, 101, 96);
 }
-
+.theWord{
+    display: none;
+}
