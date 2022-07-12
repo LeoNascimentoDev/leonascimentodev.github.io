@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="termo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>MEU TERMO</h1>
+    </header>
+    <main>
+        <div class="theWord">
+            <p></p>
+        </div>
+        <div class="game-area">
+            <div class="li" id="li1">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+            <div class="li" id="li2">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+            <div class="li" id="li3">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+            <div class="li" id="li4">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+            <div class="li" id="li5">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+            <div class="li" id="li6">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+                <div class="l4"></div>
+                <div class="l5"></div>
+            </div>
+        </div>
+        <div id="win">VOCÊ ACERTOU!</div>
+    </main>
+    <footer>
+        <div class="keyboard">
+            <button class="bt" id="kb_q">q</button>
+            <button class="bt" id="kb_w">w</button>
+            <button class="bt" id="kb_e">e</button>
+            <button class="bt" id="kb_r">r</button>
+            <button class="bt" id="kb_t">t</button>
+            <button class="bt" id="kb_y">y</button>
+            <button class="bt" id="kb_u">u</button>
+            <button class="bt" id="kb_i">i</button>
+            <button class="bt" id="kb_o">o</button>
+            <button class="bt" id="kb_p">p</button>
+            <button class="bt" id="kb_a">a</button>
+            <button class="bt" id="kb_s">s</button>
+            <button class="bt" id="kb_d">d</button>
+            <button class="bt" id="kb_f">f</button>
+            <button class="bt" id="kb_g">g</button>
+            <button class="bt" id="kb_h">h</button>
+            <button class="bt" id="kb_j">j</button>
+            <button class="bt" id="kb_k">k</button>
+            <button class="bt" id="kb_l">l</button>
+            <button class="bt" id="kb_z">z</button>
+            <button class="bt" id="kb_x">x</button>
+            <button class="bt" id="kb_c">c</button>
+            <button class="bt" id="kb_v">v</button>
+            <button class="bt" id="kb_b">b</button>
+            <button class="bt" id="kb_m">m</button>
+            <button class="bt" id="kb_n">n</button>
+            <button id="bt-send">OK</button>
+            <button id="bt-erase"> Del </button>
+        </div>
+
+    </footer>
+</body>
+<script>
+
+    let allW = ""
+    let requestUrl = "/termo/words5.json"
+    let wordNumber = getRandomInt(1001)
+
+    let request = new XMLHttpRequest()
+    request.open('GET', requestUrl)
+    request.responseType = 'json';
+    request.send();
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    request.onload = function () {
+        allW = request.response;
+
+        document.querySelector('.theWord p').textContent = allW[wordNumber]
+
+        let input = []
+        let inputs = []
+        let letras = []
+        let keys = document.querySelectorAll('.bt')
+
+        let str = document.querySelector('.theWord p').textContent
+        let theWord = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        console.log(theWord);
+        let twk = theWord.split('')
+        let linha = 0
+        let letra = 0
+
+        let divLinhas = [document.querySelectorAll('#li1 div'),
+        document.querySelectorAll('#li2 div'),
+        document.querySelectorAll('#li3 div'),
+        document.querySelectorAll('#li4 div'),
+        document.querySelectorAll('#li5 div'),
+        document.querySelectorAll('#li6 div')]
+
+        keys.forEach(e => {
+            e.addEventListener('click', click)
+            function click(e) {
+                input.push(e.path[0].textContent)
+                divLinhas[linha][letra].textContent = input[letra]
+                letra++
+            }
+        });
+
+        document.getElementById("bt-erase").addEventListener("click", erase)
+        function erase() {
+            input.pop()
+            divLinhas[linha][letra - 1].textContent = ""
+            letra--
+        }
+
+        document.getElementById("bt-send").addEventListener("click", send)
+        function send() {
+            if (input.length < 4) //fazer verificações 
+                return
+            else {
+
+                let counter = 0
+                input.forEach((e, i) => {
+                    if (input[i] == twk[i]) {
+                        counter++
+                    }
+                })
+                if (counter == 5) {
+                    win()
+                }
+
+
+                letras = [...new Set(input)]
+                letras.forEach((e, i) => {
+                    re = new RegExp(e, "g");
+                    inputs.push([...theWord.matchAll(re)].length)
+
+                })
+
+
+                input.forEach((e, i) => {
+                    if (e == twk[i]) {
+                        match(e, i)
+                    }
+
+
+                })
+
+                input.forEach((e, i) => {
+
+                    if (!twk.includes(e)) {
+                        divLinhas[linha][i].style.background = 'red'
+                    }
+                    if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != 'green') {
+
+                        has(e, i)
+                    }
+                    // else {
+                    //     divLinhas[linha][i].style.background = 'red'
+                    // }
+
+
+                });
+
+                input = []
+                letra = 0
+                linha++
+                inputs = []
+                letras = []
+                counter = 0
+
+
+            }
+        }
+
+        function match(e, i) {
+            divLinhas[linha][i].style.background = 'green'
+            let id = letras.indexOf(e)
+            inputs[id]--
+        }
+        function has(e, i) {
+            divLinhas[linha][i].style.background = 'rgb(201, 177, 131)'
+            divLinhas[linha][i].style.color = 'rgb(94, 86, 81)'
+            let id = letras.indexOf(e)
+            inputs[id]--
+        }
+
+        function win() {
+
+            divLinhas[linha].forEach(e => {
+                e.style.background = 'green'
+            })
+            document.getElementById('win').style.display = "block"
+        }
+
+    }
+
+</script>
+
+</html>
