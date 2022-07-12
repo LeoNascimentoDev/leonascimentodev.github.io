@@ -12,12 +12,12 @@ body {
     color: aliceblue;
     /* padding: 10px; */
     margin: 0;
-    height: 100%;
+    height: 100;
 }
 
 header {
-    font-size: 1.5rem;
-    height: 10%;
+    font-size: 1.3rem;
+    height: 5%;
 }
 
 main {
@@ -35,7 +35,7 @@ main {
 .li{
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    margin: 2px;
 }
 
 .l1,
@@ -44,29 +44,59 @@ main {
 .l4,
 .l5,
 .l6 {
-    height: 35px;
-    width:  35px;
+    height: 50px;
+    width:  50px;
     background-color: rgb(94, 86, 81);
-    /* padding: 20px; */
-    margin: 0px 5px 0px 5px;
+    margin: 0px 1px 0px 1px;
     border-radius: 5px;
     font-size: 1.6rem;
+    vertical-align: middle;
     text-align: center;
 }
 
+
 .keyboard {
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: space-evenly;
-    align-items: stretch;
+    display: grid;
+    grid-template-areas: "l1"
+                         "l2"
+                         "l3";
+    grid-template-rows: auto auto auto;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(108, 101, 96);
 }
 
+#kb-l1 {
+    margin-top: 10px;
+    justify-content: center;
+    grid-area: l1;
+    display: flex;
+    flex-direction: row;
+    
+}
+#kb-l2 {
+    display: flex;
+    flex-direction: row;
+    grid-area: l2;
+    justify-content: center;
+}#kb-l3 {
+    margin-bottom: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    grid-area: l3;
+
+}
+
+
+
 .keyboard button {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
@@ -75,7 +105,8 @@ main {
     border-radius: 5px;
     color: aliceblue;
     font-family: 'Bebas Neue', cursive;
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
+    padding: 0;
 }
 .keyboard button:hover{
     background-color:  rgb(108, 101, 96);
@@ -92,19 +123,32 @@ main {
     top: 50%;
     left:auto;
     text-align: center;
-    background-color:rgba(108, 101, 96, 0.527); 
+    background-color:rgba(129, 189, 114, 0.8); 
     font-size: 30px;
     padding: 20px;
     border-radius: 10px;
 }
-footer {
+#deft{
+    display: none;
     position: absolute;
-    bottom: 0;
-    height: auto;
-    width: 100%;
-    align-self: center;
-    background-color: rgb(108, 101, 96);
+    top: 50%;
+    left:auto;
+    text-align: center;
+    background-color:rgba(188, 117, 102, 0.9); 
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
 }
+
 .theWord{
     display: none;
+}
+
+@media (max-width: 510px){
+    .keyboard button {
+        height: 35px;
+        width: 30px;
+        font-size: 15px;
+        margin: 8px 2px 8px 2px;
+    }
 }
