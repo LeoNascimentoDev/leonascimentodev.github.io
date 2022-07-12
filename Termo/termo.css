@@ -32,12 +32,7 @@ main {
     font-family: 'Bebas Neue', cursive;
 }
 
-.li1,
-.li2,
-.li3,
-.li4,
-.li5,
-.li6 {
+.li{
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -49,17 +44,65 @@ main {
 .l4,
 .l5,
 .l6 {
+    height: 35px;
+    width:  35px;
     background-color: rgb(94, 86, 81);
-    padding: 20px;
+    /* padding: 20px; */
     margin: 0px 5px 0px 5px;
     border-radius: 5px;
+    font-size: 1.6rem;
+    text-align: center;
 }
 
+.keyboard {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.keyboard button {
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: grey;
+    border: 0;
+    border-radius: 5px;
+    color: aliceblue;
+    font-family: 'Bebas Neue', cursive;
+    margin: 5px 5px 5px 5px;
+}
+.keyboard button:hover{
+    background-color:  rgb(108, 101, 96);
+    border: solid 1px aliceblue;
+}
+.keyboard button:active {
+    background-color: aliceblue;
+    border: solid 1px black;
+    color: black;
+}
+#win{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left:auto;
+    text-align: center;
+    background-color:rgba(108, 101, 96, 0.527); 
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
 footer {
     position: absolute;
     bottom: 0;
-    height: 30%;
+    height: auto;
     width: 100%;
     align-self: center;
-    background-color: aquamarine;
+    background-color: rgb(108, 101, 96);
 }
+

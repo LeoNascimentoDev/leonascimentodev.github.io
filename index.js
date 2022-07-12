@@ -11,21 +11,21 @@ $(function () {
     })
 
 
-    $('.card-link').on('touchstart', function (e) {
-        if ($(this).parent().hasClass('selected')) {
-            return
-        }
-        else {
-            e.preventDefault()
-            $('.card-link').parent().removeClass('selected').addClass('not-selected')
-            $(this).parent().addClass('selected').removeClass('not-selected')
+    // $('.card-link').on('touchstart', function (e) {
+    //     if ($(this).parent().hasClass('selected')) {
+    //         return
+    //     }
+    //     else {
+    //         e.preventDefault()
+    //         $('.card-link').parent().removeClass('selected').addClass('not-selected')
+    //         $(this).parent().addClass('selected').removeClass('not-selected')
 
-        }
-    })
+    //     }
+    // })
 
-    $('.button').on('touchstart', function (e) {
-        $('.card-link').parent().removeClass('selected not-selected')
-    })
+    // $('.button').on('touchstart', function (e) {
+    //     $('.card-link').parent().removeClass('selected not-selected')
+    // })
 
 
 
