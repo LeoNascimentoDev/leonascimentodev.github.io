@@ -128,7 +128,6 @@
         let inputs = []
         let letras = []
         let keys = document.querySelectorAll('.bt')
-
         let str = document.querySelector('.theWord p').textContent
         let theWord = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         console.log(theWord);
@@ -146,9 +145,11 @@
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click(e) {
-                input.push(e.path[0].textContent)
-                divLinhas[linha][letra].textContent = input[letra]
-                letra++
+                if(letra<5){
+                    input.push(e.path[0].textContent)
+                    divLinhas[linha][letra].textContent = input[letra]
+                    letra++
+                }
             }
         });
 
