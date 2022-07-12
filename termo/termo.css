@@ -120,8 +120,7 @@ main {
 #win{
     display: none;
     position: absolute;
-    top: 50%;
-    left:auto;
+    top: 20%;
     text-align: center;
     background-color:rgba(129, 189, 114, 0.8); 
     font-size: 30px;
@@ -131,8 +130,7 @@ main {
 #deft{
     display: none;
     position: absolute;
-    top: 50%;
-    left:auto;
+    top: 20%;
     text-align: center;
     background-color:rgba(188, 117, 102, 0.9); 
     font-size: 30px;

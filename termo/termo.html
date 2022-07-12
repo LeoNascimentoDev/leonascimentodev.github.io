@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
+<div id="win">VOCÊ ACERTOU! <br> F5 para começar de novo <br> A palavra era: </div>
+<div id="deft">Você é FRACO e ERROU! <br> F5 para começar de novo <br> A palavra era: </div>
 <body>
     <header>
         <h1>MEU TERMO</h1>
@@ -64,8 +66,7 @@
                 <div class="l5"></div>
             </div>
         </div>
-        <div id="win">VOCÊ ACERTOU! <br> F5 para começar de novo <br> A palavra era: </div>
-        <div id="deft">Você é FRACO e ERROU! <br> F5 para começar de novo <br> A palavra era: </div>
+        
     </main>
     <div class="keyboard">
         <div id="kb-l1">
@@ -162,7 +163,7 @@
 
         document.getElementById("bt-send").addEventListener("click", send)
         function send() {
-            if (input.length < 4) //fazer verificações 
+            if (input.length < 5) //fazer verificações 
                 return
             else {
 
