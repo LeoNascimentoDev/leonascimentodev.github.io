@@ -143,11 +143,13 @@
         document.querySelectorAll('#li5 div'),
         document.querySelectorAll('#li6 div')]
 
+
         keys.forEach(e => {
             e.addEventListener('click', click)
-            function click(e) {
+            function click() {
                 if(letra<5){
-                    input.push(e.path[0].textContent)
+                    console.log(this.textContent);
+                    input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
                 }
