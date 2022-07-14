@@ -55,7 +55,15 @@ $(function () {
         }
     })
 
-    $('.button').click(function (e) {
-        $('.card-link').parent().removeClass('selected not-selected')
-    })
+
+    document.addEventListener('click', clickCard)
+    function clickCard(e) {
+        let card = Array.from($('.card-link'))
+        card.forEach((el, i) => {
+            if (!$(e.target.parentElement).hasClass('card-link') && !$(e.target).hasClass('card-link')) {
+                $('.card-link').parent().removeClass('selected not-selected')
+            }
+        })
+    }
+      
 })
