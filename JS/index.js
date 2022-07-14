@@ -11,22 +11,21 @@ $(function () {
     })
 
 
-    $('.card-link').on('touchstart', function (e) {
-        if ($(this).parent().hasClass('selected')) {
-            return
-        }
-        else {
-            e.preventDefault()
-            $('.card-link').parent().removeClass('selected').addClass('not-selected')
-            $(this).parent().addClass('selected').removeClass('not-selected')
-            alert('touch')
+    // $('.card-link').on('touchstart', function (e) {
+    //     if ($(this).parent().hasClass('selected')) {
+    //         return
+    //     }
+    //     else {
+    //         e.preventDefault()
+    //         $('.card-link').parent().removeClass('selected').addClass('not-selected')
+    //         $(this).parent().addClass('selected').removeClass('not-selected')
 
-        }
-    })
+    //     }
+    // })
 
-    $('.button').on('touchstart', function (e) {
-        $('.card-link').parent().removeClass('selected not-selected')
-    })
+    // $('.button').on('touchstart', function (e) {
+    //     $('.card-link').parent().removeClass('selected not-selected')
+    // })
 
 
 
@@ -38,7 +37,6 @@ $(function () {
             e.preventDefault()
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
-            alert('mouse')
 
             // a ser implementado card 3d!!!
             // let mouse = []

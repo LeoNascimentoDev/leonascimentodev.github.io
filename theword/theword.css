@@ -117,14 +117,23 @@ main {
     border: solid 1px black;
     color: black;
 }
+
+#bt-send{
+    background-color:rgba(100, 200, 120, 0.8); 
+}
+#bt-erase{
+    background-color:rgba(188, 117, 102, 0.9); 
+
+}
+
 #win{
     display: none;
     position: absolute;
     top: 20%;
     text-align: center;
-    background-color:rgba(129, 189, 114, 0.8); 
+    background-color:rgba(100, 200, 120, 0.8); 
     font-size: 30px;
-    padding: 20px;
+    padding: 50px 20px 50px 20px;
     border-radius: 10px;
 }
 #deft{

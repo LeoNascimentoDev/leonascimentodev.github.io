@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Letrão</title>
-    <link rel="stylesheet" href="termo.css">
+    <title>The Word</title>
+    <link rel="stylesheet" href="theword.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -14,9 +14,10 @@
 
 <div id="win">VOCÊ ACERTOU! <br> F5 para começar de novo <br> A palavra era: </div>
 <div id="deft">Você é FRACO e ERROU! <br> F5 para começar de novo <br> A palavra era: </div>
+
 <body>
     <header>
-        <h1>Meu Letrão</h1>
+        <h1>The Word</h1>
     </header>
     <main>
         <div class="theWord">
@@ -66,7 +67,7 @@
                 <div class="l5"></div>
             </div>
         </div>
-        
+
     </main>
     <div class="keyboard">
         <div id="kb-l1">
@@ -109,7 +110,7 @@
 <script>
 
     let allW = ""
-    let requestUrl = "/termo/words5.json"
+    let requestUrl = "/theword/words5.json"
     let wordNumber = getRandomInt(1001)
 
     let request = new XMLHttpRequest()
@@ -144,11 +145,34 @@
         document.querySelectorAll('#li6 div')]
 
 
+        // Caso o usuário use o teclado
+        document.addEventListener('keyup', dig)
+
+        function dig(e) {
+            console.log(e.key);
+            if (letra < 5 && e.key != "Enter" && e.key != "Backspace") {
+                input.push(e.key) //Ainda falta fazer verificações 
+                divLinhas[linha][letra].textContent = input[letra]
+                letra++
+            }
+            else if (letra == 5 && e.key == "Enter") {
+                send()
+            }
+
+            else if (e.key == "Backspace") {
+                erase()
+            }
+        }
+
+        // Caso o usuário use o mouse e teclado virtual 
+
+        document.getElementById("bt-erase").addEventListener("click", erase)
+        document.getElementById("bt-send").addEventListener("click", send)
+
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click() {
-                if(letra<5){
-                    console.log(this.textContent);
+                if (letra < 5) {
                     input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
@@ -156,16 +180,14 @@
             }
         });
 
-        document.getElementById("bt-erase").addEventListener("click", erase)
         function erase() {
             input.pop()
             divLinhas[linha][letra - 1].textContent = ""
             letra--
         }
 
-        document.getElementById("bt-send").addEventListener("click", send)
         function send() {
-            if (input.length < 5) //fazer verificações 
+            if (input.length < 5) //Ainda falta fazer verificações 
                 return
             else {
 
@@ -175,10 +197,10 @@
                         counter++
                     }
                 })
+                // contadores para vitória ou derrota
                 if (counter == 5) {
                     win()
                 }
-
                 else if (linha == 5 && counter != 5) {
                     deft()
                 }
@@ -187,71 +209,62 @@
                 letras.forEach((e, i) => {
                     re = new RegExp(e, "g");
                     inputs.push([...theWord.matchAll(re)].length)
-
                 })
-
-
                 input.forEach((e, i) => {
                     if (e == twk[i]) {
                         match(e, i)
                     }
-
-
                 })
-
                 input.forEach((e, i) => {
-
                     if (!twk.includes(e)) {
-                        divLinhas[linha][i].style.background = 'red'
+                        divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
                     }
-                    if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != 'green') {
-
+                    if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != '(129, 189, 114)') {
                         has(e, i)
                     }
-                    // else {
-                    //     divLinhas[linha][i].style.background = 'red'
-                    // }
-
-
                 });
 
+                // Caso o background n tenha sido mudado, por não estar no lugar certo ou não ter  
+                input.forEach((e, i) => {
+                    if (divLinhas[linha][i].style.background == "") {
+                        divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+                    }
+                })
+
+                // Após dar enter e mudar de linha os contadores são zerados
                 input = []
                 letra = 0
                 linha++
                 inputs = []
                 letras = []
                 counter = 0
-
-
-
             }
         }
-
+        // caso a letra de match com a da palavra
         function match(e, i) {
-            divLinhas[linha][i].style.background = 'green'
+            divLinhas[linha][i].style.background = 'rgb(129, 189, 114)'
             let id = letras.indexOf(e)
             inputs[id]--
         }
+        // caso a letra esteja na palavra mas em posição errada
         function has(e, i) {
             divLinhas[linha][i].style.background = 'rgb(201, 177, 131)'
             divLinhas[linha][i].style.color = 'rgb(94, 86, 81)'
             let id = letras.indexOf(e)
             inputs[id]--
         }
-
+        // caso vença
         function win() {
-
             divLinhas[linha].forEach(e => {
-                e.style.background = 'green'
+                e.style.background = 'rgb(129, 189, 114)'
             })
             document.getElementById('win').style.display = "block"
             document.getElementById('win').append(theWord)
-
         }
+        // caso perca
         function deft() {
-
-                       document.getElementById('deft').style.display = "block"
-                       document.getElementById('deft').append(theWord)
+            document.getElementById('deft').style.display = "block"
+            document.getElementById('deft').append(theWord)
         }
 
     }
