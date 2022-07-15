@@ -136,6 +136,7 @@
         let twk = theWord.split('')
         let linha = 0
         let letra = 0
+        wrongKeys = []
 
         let divLinhas = [document.querySelectorAll('#li1 div'),
         document.querySelectorAll('#li2 div'),
@@ -149,7 +150,6 @@
         document.addEventListener('keyup', dig)
 
         function dig(e) {
-            console.log(e.key);
             if (letra < 5 && e.key != "Enter" && e.key != "Backspace") {
                 input.push(e.key) //Ainda falta fazer verificações 
                 divLinhas[linha][letra].textContent = input[letra]
@@ -218,6 +218,7 @@
                 input.forEach((e, i) => {
                     if (!twk.includes(e)) {
                         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+                        wrongKeys.push(e)
                     }
                     if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != '(129, 189, 114)') {
                         has(e, i)
@@ -228,8 +229,12 @@
                 input.forEach((e, i) => {
                     if (divLinhas[linha][i].style.background == "") {
                         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+                        wrongKeys.push(e)
                     }
                 })
+
+
+                changeKey()
 
                 // Após dar enter e mudar de linha os contadores são zerados
                 input = []
@@ -238,8 +243,29 @@
                 inputs = []
                 letras = []
                 counter = 0
+                wrongKeys = []
+
             }
         }
+
+
+        // Verificação da letra para o teclado 
+
+        function changeKey() {
+            let setArr = [...new Set(wrongKeys)]   // eliminar duplicados 
+            let allletters = []
+            keys.forEach(function (e, i) {
+                allletters.push(e.textContent)
+            })
+            setArr.forEach(function (e) {
+                keys[allletters.findIndex(el => el ==e )].style.background = "rgb(240, 100, 100)"
+                keys[allletters.findIndex(el => el ==e )].setAttribute()
+            })
+
+
+        }
+
+
         // caso a letra de match com a da palavra
         function match(e, i) {
             divLinhas[linha][i].style.background = 'rgb(129, 189, 114)'
