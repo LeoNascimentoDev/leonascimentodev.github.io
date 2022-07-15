@@ -137,6 +137,11 @@
         let linha = 0
         let letra = 0
         wrongKeys = []
+        let auxarr = Array.from(document.getElementsByClassName('li'))
+        let thisLinha = 0
+        let auxarr2 = []
+
+
 
         let divLinhas = [document.querySelectorAll('#li1 div'),
         document.querySelectorAll('#li2 div'),
@@ -146,9 +151,28 @@
         document.querySelectorAll('#li6 div')]
 
 
+
+        // // se clicar no local da letra
+        // document.addEventListener('click', function (el) {
+        //     for (let c = 0; c < 5; c++) {
+        //         auxarr2.push(auxarr[linha].children.item(c))
+        //     }
+        //     let first = auxarr2
+        //     let eleClick = el.target
+
+        //     if (first.includes(eleClick)) {
+
+        //         eleClick.textContent ='e'
+
+        //     }
+        //     auxarr2 = []
+        //     eleClick = null
+        //     first = null
+        // })
+
+
         // Caso o usuário use o teclado
         document.addEventListener('keyup', dig)
-
         function dig(e) {
             if (letra < 5 && e.key != "Enter" && e.key != "Backspace") {
                 input.push(e.key) //Ainda falta fazer verificações 
@@ -164,15 +188,18 @@
             }
         }
 
+
+
         // Caso o usuário use o mouse e teclado virtual 
 
         document.getElementById("bt-erase").addEventListener("click", erase)
         document.getElementById("bt-send").addEventListener("click", send)
 
+
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click() {
-                if (letra < 5) {
+                if (letra < 5 && this.style.background != 'rgb(240, 100, 100)') {
                     input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
@@ -234,6 +261,7 @@
                 })
 
 
+
                 changeKey()
 
                 // Após dar enter e mudar de linha os contadores são zerados
@@ -245,11 +273,16 @@
                 counter = 0
                 wrongKeys = []
 
+
             }
         }
 
 
-        // Verificação da letra para o teclado 
+
+
+
+
+        // Verificação da letra para o teclado ficar colorido
 
         function changeKey() {
             let setArr = [...new Set(wrongKeys)]   // eliminar duplicados 
@@ -258,12 +291,11 @@
                 allletters.push(e.textContent)
             })
             setArr.forEach(function (e) {
-                keys[allletters.findIndex(el => el ==e )].style.background = "rgb(240, 100, 100)"
+                keys[allletters.findIndex(el => el == e)].style.background = "rgb(240, 100, 100)"
             })
 
 
         }
-
 
         // caso a letra de match com a da palavra
         function match(e, i) {
