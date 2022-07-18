@@ -174,7 +174,8 @@
         // Caso o usuário use o teclado
         document.addEventListener('keyup', dig)
         function dig(e) {
-            if (letra < 5 && e.key != "Enter" && e.key != "Backspace") {
+            
+            if (letra < 5 && e.keyCode >= 65 && e.keyCode <= 90  ) {
                 input.push(e.key) //Ainda falta fazer verificações 
                 divLinhas[linha][letra].textContent = input[letra]
                 letra++
@@ -199,7 +200,7 @@
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click() {
-                if (letra < 5 && this.style.background != 'rgb(240, 100, 100)') {
+                if (letra < 5 /* && this.style.background != 'rgb(240, 100, 100)'*/) {
                     input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
@@ -214,7 +215,7 @@
         }
 
         function send() {
-            if (input.length < 5) //Ainda falta fazer verificações 
+            if (input.length < 5) //Ainda falta fazer verificações da palavra
                 return
             else {
 
