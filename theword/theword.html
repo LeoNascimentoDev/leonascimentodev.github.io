@@ -131,17 +131,14 @@
         let letras = {}
         let keys = document.querySelectorAll('.bt')
         let str = document.querySelector('.theWord p').textContent
-        let theWord = "mesma"// str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        let theWord = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         console.log(theWord);
         let twk = theWord.split('')
         let linha = 0
         let letra = 0
-        wrongKeys = []
-        let auxarr = Array.from(document.getElementsByClassName('li'))
         let thisLinha = 0
-        let auxarr2 = []
-
-
+        let lettersObj = new Object
+        let counter = 0
 
         let divLinhas = [document.querySelectorAll('#li1 div'),
         document.querySelectorAll('#li2 div'),
@@ -150,9 +147,9 @@
         document.querySelectorAll('#li5 div'),
         document.querySelectorAll('#li6 div')]
 
-
-
-        // // se clicar no local da letra
+        // // // se clicar no local da letra
+        // let auxarr = Array.from(document.getElementsByClassName('li'))
+        // let auxarr2 = []
         // document.addEventListener('click', function (el) {
         //     for (let c = 0; c < 5; c++) {
         //         auxarr2.push(auxarr[linha].children.item(c))
@@ -176,7 +173,7 @@
         function dig(e) {
 
             if (letra < 5 && e.keyCode >= 65 && e.keyCode <= 90) {
-                input.push(e.key) //Ainda falta fazer verificações 
+                input.push(e.key) //Ainda falta fazer verificações da palavra
                 divLinhas[linha][letra].textContent = input[letra]
                 letra++
             }
@@ -189,18 +186,14 @@
             }
         }
 
-
-
         // Caso o usuário use o mouse e teclado virtual 
-
         document.getElementById("bt-erase").addEventListener("click", erase)
         document.getElementById("bt-send").addEventListener("click", send)
-
 
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click() {
-                if (letra < 5 /* && this.style.background != 'rgb(240, 100, 100)'*/) {
+                if (letra < 5  && this.style.background != 'rgb(240, 100, 100)') {
                     input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
@@ -217,14 +210,23 @@
         function send() {
             if (input.length < 5) //Ainda falta fazer verificações da palavra
                 return
+
+                // AQUI DAR MATCH DE INPUT COM PALAVRA DO BANCO DE DADOS, CASO CONTRÁRIO NÃO prosseguir 
+
             else {
 
-                let counter = 0
                 input.forEach((e, i) => {
-                    if (input[i] == twk[i]) {
-                        counter++
-                    }
+                    // objeto
+                    re = new RegExp(e, "g");
+                    inputs.push([...theWord.matchAll(re)].length)
+                    lettersObj[e] = inputs[i]
                 })
+
+                // teste se a letra está inclusa
+                input.forEach((e, i) => {
+                    isInclude(e, i)
+                })
+
                 // contadores para vitória ou derrota
                 if (counter == 5) {
                     win()
@@ -233,43 +235,15 @@
                     deft()
                 }
 
-                letras = [...new Set(input)]
-                letras.forEach((e, i) => {
-                    re = new RegExp(e, "g");
-                    inputs.push([...theWord.matchAll(re)].length)
-                })
-
-                    // input.forEach((e,i)=>{
-                    //     letras.push(i: e) 
-                    // })
-                    // console.log(letras[1]);
-
-                // input.forEach((e, i) => {
-                //     if (isInclude) {
-                //         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
-                //         wrongKeys.push(e)
-                //     }
-                //     // if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != '(129, 189, 114)') {
-                //     //     has(e, i)
-                //     // }
-                // });
-
                 input.forEach((e, i) => {
-                    isInclude(e, i)
+                    if (lettersObj[e] >= 1 && divLinhas[linha][i].style.background == '') {
+                        lettersObj[e] -= 1
+                        has(e, i)
+                    }
+                    else if (divLinhas[linha][i].style.background == '') {
+                        applyStyleRed(divLinhas[linha][i])
+                    }
                 })
-
-                // input.forEach((e, i) => {
-
-                //     if (divLinhas[linha][i].style.background == "") {
-                //         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
-                //         wrongKeys.push(e)
-
-                //     }
-                // })
-
-
-
-                changeKey()
 
                 // Após dar enter e mudar de linha os contadores são zerados
                 input = []
@@ -278,58 +252,42 @@
                 inputs = []
                 letras = []
                 counter = 0
-                wrongKeys = []
-
-
+                lettersObj = {}
             }
         }
-
-
-
-
-
 
         // Verificação da letra para o teclado ficar colorido
-
-        function changeKey() {
-            let setArr = [...new Set(wrongKeys)]   // eliminar duplicados 
+        function changeKey(e) {
             let allletters = []
-            keys.forEach(function (e, i) {
-                allletters.push(e.textContent)
+            keys.forEach(function (el) {
+                allletters.push(el.textContent)
             })
-            setArr.forEach(function (e) {
-                keys[allletters.findIndex(el => el == e)].style.background = "rgb(240, 100, 100)"
-            })
-
-
+            applyStyleRed(keys[allletters.findIndex(ele => ele == e)])
         }
 
-
-        // a letra existe  na palavra ? retorna se existe e se está na posição correta
+        // a letra existe na palavra ? retorna se existe e se está na posição correta
         function isInclude(e, i) {
-           
-            if (twk[i] == e ) {
-                match(e,i)
-            }
-            if (!twk.includes(e)) {
-                divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
-            }
 
+            if (twk[i] == e) { // chamar função de não match
+                counter++
+                divLinhas[linha][i].style.background = 'rgb(129, 189, 114)'
+                lettersObj[e] -= 1
+            }
+            if (!twk.includes(e)) { // chamar função de não match
+                applyStyleRed(divLinhas[linha][i]) 
+                changeKey(e)
+            }
         }
 
-        // caso a letra de match com a da palavra
-        function match(e, i) {
-            divLinhas[linha][i].style.background = 'rgb(129, 189, 114)'
-            divLinhas[linha][i].style.color = 'aliceblue'
-            let id = letras.indexOf(e)
-            inputs[id]--
+        // caso a letra não exista na palavra aplica o style no elemento enviado
+        function applyStyleRed (elem){
+            elem.style.background = 'rgb(240, 100, 100)'
         }
+        
         // caso a letra esteja na palavra mas em posição errada
         function has(e, i) {
             divLinhas[linha][i].style.background = 'rgb(201, 177, 131)'
             divLinhas[linha][i].style.color = 'rgb(94, 86, 81)'
-            let id = letras.indexOf(e)
-            inputs[id]--
         }
         // caso vença
         function win() {
