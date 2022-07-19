@@ -128,10 +128,10 @@
 
         let input = []
         let inputs = []
-        let letras = []
+        let letras = {}
         let keys = document.querySelectorAll('.bt')
         let str = document.querySelector('.theWord p').textContent
-        let theWord = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        let theWord = "mesma"// str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         console.log(theWord);
         let twk = theWord.split('')
         let linha = 0
@@ -174,8 +174,8 @@
         // Caso o usuário use o teclado
         document.addEventListener('keyup', dig)
         function dig(e) {
-            
-            if (letra < 5 && e.keyCode >= 65 && e.keyCode <= 90  ) {
+
+            if (letra < 5 && e.keyCode >= 65 && e.keyCode <= 90) {
                 input.push(e.key) //Ainda falta fazer verificações 
                 divLinhas[linha][letra].textContent = input[letra]
                 letra++
@@ -238,28 +238,34 @@
                     re = new RegExp(e, "g");
                     inputs.push([...theWord.matchAll(re)].length)
                 })
-                input.forEach((e, i) => {
-                    if (e == twk[i]) {
-                        match(e, i)
-                    }
-                })
-                input.forEach((e, i) => {
-                    if (!twk.includes(e)) {
-                        divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
-                        wrongKeys.push(e)
-                    }
-                    if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != '(129, 189, 114)') {
-                        has(e, i)
-                    }
-                });
 
-                // Caso o background n tenha sido mudado, por não estar no lugar certo ou não ter  
+                    // input.forEach((e,i)=>{
+                    //     letras.push(i: e) 
+                    // })
+                    // console.log(letras[1]);
+
+                // input.forEach((e, i) => {
+                //     if (isInclude) {
+                //         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+                //         wrongKeys.push(e)
+                //     }
+                //     // if (inputs[letras.indexOf(e)] > 0 && divLinhas[linha][i].style.background != '(129, 189, 114)') {
+                //     //     has(e, i)
+                //     // }
+                // });
+
                 input.forEach((e, i) => {
-                    if (divLinhas[linha][i].style.background == "") {
-                        divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
-                        wrongKeys.push(e)
-                    }
+                    isInclude(e, i)
                 })
+
+                // input.forEach((e, i) => {
+
+                //     if (divLinhas[linha][i].style.background == "") {
+                //         divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+                //         wrongKeys.push(e)
+
+                //     }
+                // })
 
 
 
@@ -298,9 +304,23 @@
 
         }
 
+
+        // a letra existe  na palavra ? retorna se existe e se está na posição correta
+        function isInclude(e, i) {
+           
+            if (twk[i] == e ) {
+                match(e,i)
+            }
+            if (!twk.includes(e)) {
+                divLinhas[linha][i].style.background = 'rgb(240, 100, 100)'
+            }
+
+        }
+
         // caso a letra de match com a da palavra
         function match(e, i) {
             divLinhas[linha][i].style.background = 'rgb(129, 189, 114)'
+            divLinhas[linha][i].style.color = 'aliceblue'
             let id = letras.indexOf(e)
             inputs[id]--
         }
