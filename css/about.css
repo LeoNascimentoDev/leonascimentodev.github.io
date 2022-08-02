@@ -9,7 +9,7 @@ body {
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(40, 40, 40);
     display: flex;
     flex-direction: column;
 }
@@ -120,7 +120,7 @@ header {
 }
 
 
-/* Parte da exibição dos projetos */
+/* about */
 
 main {
     display: flex;
@@ -128,67 +128,41 @@ main {
     padding: 20px 100px 30px 100px;
 }
 
-#nav-projects {
+#nav-about {
     font-weight: 300;
     color: aliceblue;
-    font-size: 35px;
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
 }
 
-#nav-projects :nth-last-child(1) {
+#nav-about :nth-last-child(1) {
     font-size: 15px;
 }
 
-#nav-filter {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 20px 0px 0px 0px;
-    height: auto;
+.about{
+    padding-top: 20px;
+    text-align: justify;
+    font-size: 12px;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+}
+.about h2,h3{
+    font-weight: 200;
+}
+.about article{
+    padding-top: 12px;
 }
 
-#nav-filter .button {
-    margin-bottom: 25px;
+.about h2 b{
+    padding-left: 30px;
 }
 
-
-#nav-filter .button.bt-selected a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: rgb(45, 47, 49);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: center;
-    padding: 8px 25px 8px 25px;
-    border-radius: 5px;
-    background: rgb(187, 187, 205);
-}
-
-#nav-filter .button a {
-    margin: 0 10px;
+.about a{
     text-decoration: none;
     color: aliceblue;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: center;
-    padding: 8px 25px 8px 25px;
-    border-radius: 5px;
-    background: rgb(63, 63, 65);
+    padding-left: 20px;
 }
 
-#nav-filter .button:hover a {
-    background: rgb(187, 187, 205);
-    color: rgb(27, 27, 27);
-}
-
-#nav-filter .button:active a {
-
-    color: aliceblue;
-    background: rgb(43, 43, 44);
-
-}
 
 
 /* footer da página*/
@@ -205,6 +179,7 @@ footer {
     width: 100%;
 }
 
-#contact a {
+#contact a{
     text-decoration: none;
+
 }
