@@ -20,9 +20,8 @@
         body {
             background-color: #1f2c38;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+            /* display: flex;
+            flex-direction: column; */
 
         }
 
@@ -30,15 +29,11 @@
             list-style: none;
             text-align: center;
             margin-top: 50px;
+            position: absolute;
+            left: 30%;
         }
 
-        .card1{
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            align-items: center;
-            justify-content: flex-start;
-        }
+
         h1,
         span,
         a {
@@ -149,9 +144,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
-        header, h2,h3 {
-            
+
+        header,
+        h2,
+        h3 {
+
             color: #fff;
             padding-top: 30px;
             text-align: center;
@@ -161,15 +158,16 @@
 
 </head>
 
+<header>
+
+    <h1>CARDS INTERATIVOS</h1>
+</header>
+
 <body>
 
-    <header>
-
-        <h1>CARDS INTERATIVOS</h1>
-    </header>
 
     <div class="card1">
-<h2>Exemplo Cards 01 </h2>
+        <h2>Exemplo Cards 01 </h2>
         <ul>
             <li>
                 <a href="index.html">
@@ -195,11 +193,11 @@
         </ul>
     </div>
 
-    <div>
+    <!-- <div>
 
         <h2>Exemplo Cards 02 </h2>
         <h3>Em breve </h3>
-    </div>
+    </div> -->
 
 
 
