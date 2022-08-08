@@ -3,7 +3,7 @@ div.allCards {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 
@@ -38,7 +38,9 @@ li {
 .card-cover {
     height: 200px;
     align-self: center;
+    width: 100%;
 }
+
 
 .card-title {
     font-family: 'Oswald', sans-serif;
@@ -128,4 +130,6 @@ li {
 .selected .card-cover {
     height: 120px;
     width: auto;
+    overflow: clip
+    ;
 }
