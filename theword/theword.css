@@ -107,6 +107,7 @@ main {
     font-family: 'Bebas Neue', cursive;
     margin: 5px;
     padding: 0;
+   
 }
 .keyboard button:hover{
     background-color:  rgb(108, 101, 96);
@@ -157,5 +158,14 @@ main {
         width: 33px;
         font-size: 15px;
         margin: 8px 1px 8px 1px;
+    }
+
+    header > h1 {
+        font-size: 2rem;
+    }
+
+    .keyboard {
+        position: fixed;
+        bottom: 0;
     }
 }
