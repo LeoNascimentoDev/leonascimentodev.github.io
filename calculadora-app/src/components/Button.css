@@ -1,0 +1,31 @@
+/* utilizando variaveis para o css */
+
+:root {
+    --bg-bt: #f0f0f0;
+    --border-bt: solid 0.5px grey
+}
+
+.button {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: var(--bg-bt);
+    border: var(--border-bt);
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgb(186, 186, 186);
+}
+
+.button:active {
+    background-color: rgb(74, 74, 74);
+    color: aliceblue;
+}
+
+.double {
+    grid-column: span 2;
+}
+
+.operation {
+    background-color: #dbd3bd;;
+}
