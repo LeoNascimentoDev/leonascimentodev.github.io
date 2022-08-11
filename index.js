@@ -2,59 +2,13 @@
 
 $(function () {
 
-
-
-
     // Seleção de filtros
     $('#nav-filter .button').click(function () {
         $(this).toggleClass('bt-selected')
     })
 
+    // testar mobile
 
-    // $('.card-link').on('touchstart', function (e) {
-    //     if ($(this).parent().hasClass('selected')) {
-    //         return
-    //     }
-    //     else {
-    //         e.preventDefault()
-    //         $('.card-link').parent().removeClass('selected').addClass('not-selected')
-    //         $(this).parent().addClass('selected').removeClass('not-selected')
-
-    //     }
-    // })
-
-    // $('.button').on('touchstart', function (e) {
-    //     $('.card-link').parent().removeClass('selected not-selected')
-    // })
-
-    document.addEventListener('click', clickButton)
-    function clickButton() {
-        let bts = [...document.getElementsByClassName('bt-selected')]
-        let btsArr = []
-        let cards = [...document.getElementsByClassName('card')]
-        bts.forEach(e => {
-            btsArr.push(e.id)
-        })
-
-        cards.forEach(card => {
-            $(card).hide()
-        })
-
-        cards.forEach(card => {
-
-            btsArr.forEach(idValue => {
-
-                if (card.id == idValue) {
-                    $(card).show()
-                }
-
-            })
-        })
-
-        // adicionar efeito all
-        // resolver problema + de uma id ( utilizar outra seleção)
-
-    }
 
 
     $('.card-link').click(function (e) {

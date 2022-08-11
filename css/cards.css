@@ -21,7 +21,7 @@ li {
     margin: 20px;
     width: 200px;
     height: auto;
-    background-color: rgb(70, 70, 70);
+    background-color: rgba(70, 70, 70, 0.6);
     border-radius: 2px;
 }
 

@@ -37,7 +37,7 @@
     <header>
 
         <div id="cover">
-            <img src="/imgs/Leonardo.png" id="animation-left" alt="Leonardo Nascimento" title="Leonardo Nascimento">
+            <img src="/imgs/Leonardo2.webp" id="animation-left" alt="Leonardo Nascimento" title="Leonardo Nascimento">
         </div>
 
         <div id="title">
@@ -102,45 +102,50 @@
 
         <!-- improve this section for it do not navigate to this section and scroll up -->
         <nav id="nav-filter">
-            <div id="All" class="button bt-selected">
-                <a href="#">
-                    All
+            <div class="button selector">
+                <a id="All" href="#">
+                    Todos
                 </a>
             </div>
-            <div id="Jquery" class="button">
-                <a href="#">
-                    Jquery
+            <div class="button selector ">
+                <a id="Outros" href="#">
+                    Outros
                 </a>
             </div>
-            <div id='CSS' class="button ">
-                <a href="#">
+            <div class="button selector">
+                <a id="JQUERY" href="#">
+                    JQUERY
+                </a>
+            </div>
+            <div class="button selector">
+                <a id='CSS' href="#">
                     CSS
                 </a>
             </div>
-            <div id="JavaScript" class="button ">
-                <a href="#">
+            <div class="button selector">
+                <a id="JavaScript" href="#">
                     JavaScript
                 </a>
             </div>
-            <div id='C#' class="button ">
-                <a href="#">
+            <div class="button selector">
+                <a id='C#' href="#">
                     C#
                 </a>
             </div>
-            <div id='Bootstrap' class="button ">
-                <a href="#">
+            <div class="button selector">
+                <a id='Bootstrap' href="#">
                     Bootstrap
                 </a>
             </div>
-            <div id="React" class="button ">
-                <a href="#">
+            <div class="button selector">
+                <a id="React" href="#">
                     React
                 </a>
             </div>
         </nav>
 
         <div class="allCards">
-            <div class="card" id="React" >
+            <div class="card React" id="React">
                 <a class="card-link" href="/calculadora-app" target="_blank">
                     <img class="card-cover" src="/imgs/calculadora-app.png" alt="">
                     <span class="card-title">Calculadora APP React</span>
@@ -158,13 +163,14 @@
                 </div>
             </div>
 
-            <div class="card" id="React" >
+            <div class="card React" id="React">
                 <a class="card-link" href="https://hortifruti-app-leonascimentodev.vercel.app/" target="_blank">
                     <img class="card-cover" src="/imgs/hortifruti.png" alt="">
                     <span class="card-title">Hortifruit App</span>
                 </a>
                 <div class="card-about">
                     <span>
+                        ( Em desenvolvimento )
                         Website Hortifrúti utilizando React e Next.Js.
                     </span>
                     <div class="card-git">
@@ -176,7 +182,7 @@
                 </div>
             </div>
 
-            <div class="card" id="JavaScript" >
+            <div class="card JavaScript" id="JavaScript">
                 <a class="card-link" href="/theword/theword.html" target="_blank">
                     <img class="card-cover" src="/imgs/thewordv1.png" alt="">
                     <span class="card-title">The Word Game V1.0</span>
@@ -194,8 +200,26 @@
                 </div>
             </div>
 
-
-            <div class="card" id="JQUERY">
+            <div class="card JQUERY" id="JQUERY" data-selector="JQUERY">
+                <a class="card-link" href="https://github.com/LeoNascimentoDev/leonascimentodev.github.io"
+                    target="_blank">
+                    <img class="card-cover" src="/imgs/Leonardo2.webp" alt="">
+                    <span class="card-title">Meu Portfolio</span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Projeto com o intuito de desenvolver
+                        habilidades de gerais, este site e apresentar minhas ideias.
+                    </span>
+                    <div class="card-git">
+                        <a href="https://github.com/LeoNascimentoDev/leonascimentodev.github.io" target="_blank">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card JQUERY" id="JQUERY">
                 <a class="card-link" href="/marveltimeline/marveltimeline.html" target="_blank">
                     <img class="card-cover" src="/imgs/marveltimeline.jpg" alt="">
                     <span class="card-title">Marvel TimeLine WebSite</span>
@@ -214,7 +238,9 @@
                     </div>
                 </div>
             </div>
-            <div class="card" id="JavaScript">
+
+
+            <div class="card JavaScript" id="JavaScript">
                 <a class="card-link" href="/flappybird/flappybird.html" target="_blank">
                     <img class="card-cover" src="/imgs/flapbirdv1.png" alt="">
                     <span class="card-title">Flappy Bird V1.0</span>
@@ -235,7 +261,7 @@
 
 
 
-            <div class="card" id="CSS">
+            <div class="card CSS" id="CSS">
                 <a class="card-link" href="/cards/cards.html" target="_blank">
                     <img class="card-cover" src="/imgs/cards.png" alt="">
                     <span class="card-title">Cards Styles Exemple</span>
@@ -255,7 +281,7 @@
             </div>
 
 
-            <div class="card">
+            <div class="card All" id="Outros">
                 <a class="card-link" href="https://github.com/LeoNascimentoDev/Estudos/tree/main/Curso_Web_Cod3r"
                     target="_blank">
                     <img class="card-cover" src="/imgs/web_completo.jpg" alt="">
@@ -275,7 +301,7 @@
                 </div>
             </div>
 
-            <div class="card" id="C#">
+            <div class="card C# All" id="C#">
                 <a class="card-link" href="#" target="_blank">
                     <img class="card-cover" src="/imgs/bim_revit.png" alt="">
                     <span class="card-title">Meu TCC: Plugin para REVIT em C# </span>
@@ -296,7 +322,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="Outros">
                 <a class="card-link" href="#" target="_blank">
                     <img class="card-cover" src="/imgs/exemplo.png" alt="">
                     <span class="card-title">Exemplo</span>
@@ -350,6 +376,49 @@
 <script src="index.js"></script>
 
 <script>
+
+    // unificar todos os cliques da página
+
+    let cards = [...document.getElementsByClassName('card')]
+    let selectors = []
+
+    const allSelectors = [...$('.selector')]
+    allSelectors.forEach(e => {
+        e.addEventListener('click', clickSelector)
+    })
+
+    function clickSelector(e) {
+        if (!$(e.target).parent().hasClass('bt-selected')) {
+            selectors.push($(e.target).attr('id'))
+        }
+        else {
+            function isDiferent(param) {
+                return param != $(e.target).attr('id')
+            }
+            selectors = selectors.filter(isDiferent)
+        }
+
+        cards.forEach(card => {
+            hideCard(card)
+            if ($(e.target).attr('id') != "All") {
+                selectors.forEach(sel => $(card).attr("id") == sel ? showCard(card) : '')
+            }
+            else
+                if (selectors.length == 0) {
+                    showCard(card)
+                }
+            if ($(e.target).attr('id') == "All" && !$('#All').parent().hasClass('bt-selected')) {
+                showCard(card)
+            }
+        })
+    }
+
+    function hideCard(e) {
+        e.style.display = "none"
+    }
+    function showCard(e) {
+        e.style.display = "block"
+    }
 
 </script>
 
