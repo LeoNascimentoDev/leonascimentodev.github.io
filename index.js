@@ -27,6 +27,34 @@ $(function () {
     //     $('.card-link').parent().removeClass('selected not-selected')
     // })
 
+    document.addEventListener('click', clickButton)
+    function clickButton() {
+        let bts = [...document.getElementsByClassName('bt-selected')]
+        let btsArr = []
+        let cards = [...document.getElementsByClassName('card')]
+        bts.forEach(e => {
+            btsArr.push(e.id)
+        })
+
+        cards.forEach(card => {
+            $(card).hide()
+        })
+
+        cards.forEach(card => {
+
+            btsArr.forEach(idValue => {
+
+                if (card.id == idValue) {
+                    $(card).show()
+                }
+
+            })
+        })
+
+        // adicionar efeito all
+        // resolver problema + de uma id ( utilizar outra seleção)
+
+    }
 
 
     $('.card-link').click(function (e) {
@@ -65,5 +93,5 @@ $(function () {
             }
         })
     }
-      
+
 })
