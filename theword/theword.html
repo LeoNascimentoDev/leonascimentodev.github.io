@@ -193,7 +193,7 @@
         keys.forEach(e => {
             e.addEventListener('click', click)
             function click() {
-                if (letra < 5  && this.style.background != 'rgb(240, 100, 100)') {
+                if (letra < 5 && this.style.background != 'rgb(240, 100, 100)') {
                     input.push(this.textContent)
                     divLinhas[linha][letra].textContent = input[letra]
                     letra++
@@ -211,7 +211,7 @@
             if (input.length < 5) //Ainda falta fazer verificações da palavra
                 return
 
-                // AQUI DAR MATCH DE INPUT COM PALAVRA DO BANCO DE DADOS, CASO CONTRÁRIO NÃO prosseguir 
+            // AQUI DAR MATCH DE INPUT COM PALAVRA DO BANCO DE DADOS, CASO CONTRÁRIO NÃO prosseguir 
 
             else {
 
@@ -274,16 +274,16 @@
                 lettersObj[e] -= 1
             }
             if (!twk.includes(e)) { // chamar função de não match
-                applyStyleRed(divLinhas[linha][i]) 
+                applyStyleRed(divLinhas[linha][i])
                 changeKey(e)
             }
         }
 
         // caso a letra não exista na palavra aplica o style no elemento enviado
-        function applyStyleRed (elem){
+        function applyStyleRed(elem) {
             elem.style.background = 'rgb(240, 100, 100)'
         }
-        
+
         // caso a letra esteja na palavra mas em posição errada
         function has(e, i) {
             divLinhas[linha][i].style.background = 'rgb(201, 177, 131)'
