@@ -2,16 +2,41 @@
 
 $(function () {
 
-    // Seleção de filtros
-    // Ajusta os botões navegação com classe de botões selecionados ou não. 
-    $('#nav-filter .button').click(function () {
-        $('#nav-filter .button').removeClass('bt-selected') // Ao clicar remove de todos os botões a classe "bt-selected" 
-        $(this).toggleClass('bt-selected') // Adiciona ao botão clicado a classe "bt-selected"
+    // # Código de navegação e seleção de filtros
+
+    //alocação dos cards para uma variável
+    let cards = [...document.getElementsByClassName('card')]
+
+    //alocação dos botões marcados como "selector" em sua classe e adicionando uma função de espera de click para cada um
+    const allSelectors = [...$('.selector')]
+    allSelectors.forEach(e => {
+        e.addEventListener('click', clickSelector)
     })
 
-    // testar mobile
+    //Função de click altera a classe de botão selecionado nos botões, é feita uma verificação nos cards para mostra-los caso sua tag seja válida.  
+    function clickSelector(e) {
+        $('#nav-filter .button').removeClass('bt-selected') //desmarca todos e abaixo marca somente o clicado. 
+        $(e.target).parent().addClass('bt-selected')
+        cards.forEach(card => {
+            if ($(e.target).attr('id') == "All") {
+                showCard(card)
+            }
+            else if ($(e.target).attr('id') == card.id) {
+                card.style.display = "block" // poderia ser utilizada a função showCard
+            }
+            else {
+                hideCard(card)
+            }
+        })
+    }
+    function hideCard(e) {
+        e.style.display = "none"
+    }
+    function showCard(e) {
+        e.style.display = "block"
+    }
 
-
+    // # Seleção de cards
 
     $('.card-link').click(function (e) {
         if ($(this).parent().hasClass('selected')) {
@@ -22,7 +47,8 @@ $(function () {
             $('.card-link').parent().removeClass('selected').addClass('not-selected')
             $(this).parent().addClass('selected').removeClass('not-selected')
 
-            // a ser implementado card 3d!!!
+            // # A ser implementado card 3d!!!
+
             // let mouse = []
             // let cal = []
             // let call = []
@@ -35,10 +61,8 @@ $(function () {
             //     console.log(ell);
             //     this.style.transform = "rotate3d("+1+","+1+",0,"+ell+"deg)"//`rotate3d(${call[0]},${cal[1]},0,30deg)`
             // });
-
         }
     })
-
 
     document.addEventListener('click', clickCard)
     function clickCard(e) {
@@ -49,5 +73,4 @@ $(function () {
             }
         })
     }
-
 })

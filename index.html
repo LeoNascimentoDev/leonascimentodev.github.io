@@ -20,8 +20,6 @@
     <!-- Títulos-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
 
-
-
     <!-- import css -->
 
     <link rel="stylesheet" href="/css/animation.css">
@@ -30,8 +28,6 @@
     <link rel="stylesheet" href="/css/cards.css">
 
 </head>
-
-
 
 <body>
     <header>
@@ -83,7 +79,6 @@
         </div>
 
         </div>
-
 
         <hr class="hr1">
 
@@ -400,52 +395,5 @@
 
 <script src="/js/jquery.js"></script>
 <script src="index.js"></script>
-
-<script>
-
-    // unificar todos os cliques da página
-
-    let cards = [...document.getElementsByClassName('card')]
-    let selectors = []
-
-    const allSelectors = [...$('.selector')]
-    allSelectors.forEach(e => {
-        e.addEventListener('click', clickSelector)
-    })
-
-    function clickSelector(e) {
-        if (!$(e.target).parent().hasClass('bt-selected')) {
-            selectors.push($(e.target).attr('id'))
-        }
-        else {
-            function isDiferent(param) {
-                return param != $(e.target).attr('id')
-            }
-            selectors = selectors.filter(isDiferent)
-        }
-
-        cards.forEach(card => {
-            hideCard(card)
-            if ($(e.target).attr('id') != "All") {
-                selectors.forEach(sel => $(card).attr("id") == sel ? showCard(card) : '')
-            }
-            else
-                if (selectors.length == 0) {
-                    showCard(card)
-                }
-            if ($(e.target).attr('id') == "All" && !$('#All').parent().hasClass('bt-selected')) {
-                showCard(card)
-            }
-        })
-    }
-
-    function hideCard(e) {
-        e.style.display = "none"
-    }
-    function showCard(e) {
-        e.style.display = "block"
-    }
-
-</script>
 
 </html>
