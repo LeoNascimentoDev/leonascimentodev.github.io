@@ -3,8 +3,10 @@
 $(function () {
 
     // Seleção de filtros
+    // Ajusta os botões navegação com classe de botões selecionados ou não. 
     $('#nav-filter .button').click(function () {
-        $(this).toggleClass('bt-selected')
+        $('#nav-filter .button').removeClass('bt-selected') // Ao clicar remove de todos os botões a classe "bt-selected" 
+        $(this).toggleClass('bt-selected') // Adiciona ao botão clicado a classe "bt-selected"
     })
 
     // testar mobile
