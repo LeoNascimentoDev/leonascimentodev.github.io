@@ -21,7 +21,10 @@ $(function () {
             if ($(e.target).attr('id') == "All") {
                 showCard(card)
             }
-            else if ($(e.target).attr('id') == card.id) {
+            // else if ($(e.target).attr('id') == card.id) {
+            //     card.style.display = "block" // poderia ser utilizada a função showCard
+            // }
+            else if ($(card).hasClass($(e.target).attr('id'))) {
                 card.style.display = "block" // poderia ser utilizada a função showCard
             }
             else {
