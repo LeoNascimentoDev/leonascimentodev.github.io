@@ -95,52 +95,61 @@
             </p>
         </div>
 
-        <!-- improve this section for it do not navigate to this section and scroll up -->
         <nav id="nav-filter">
             <div class="button selector bt-selected">
-                <a id="All" href="#">
+                <a id="All" href="" onclick="return false;">
                     Todos
                 </a>
             </div>
             <div class="button selector ">
-                <a id="Outros" href="#">
+                <a id="Outros" href="" onclick="return false">
                     Outros
                 </a>
             </div>
             <div class="button selector">
-                <a id="JQUERY" href="#">
+                <a id="JQUERY" href="" onclick="return false">
                     JQUERY
                 </a>
             </div>
             <div class="button selector">
-                <a id='CSS' href="#">
+                <a id='CSS' href="" onclick="return false">
                     CSS
                 </a>
             </div>
             <div class="button selector">
-                <a id="JavaScript" href="#">
+                <a id="JavaScript" href="" onclick="return false">
                     JavaScript
                 </a>
             </div>
             <div class="button selector">
-                <a id='C#' href="#">
+                <a id='C#' href="" onclick="return false">
                     C#
                 </a>
             </div>
             <div class="button selector">
-                <a id='Bootstrap' href="#">
+                <a id='Bootstrap' href="" onclick="return false">
                     Bootstrap
                 </a>
             </div>
             <div class="button selector">
-                <a id="React" href="#">
+                <a id="React" href="" onclick="return false">
                     React
+                </a>
+            </div>
+            <div class="button selector">
+                <a id="Next" href="" onclick="return false">
+                    Next.Js
+                </a>
+            </div>
+            <div class="button selector">
+                <a id="Vue" href="" onclick="return false">
+                    Vue.JS
                 </a>
             </div>
         </nav>
 
         <div class="allCards">
-            <div class="card Bootstrap" id="Bootstrap">
+            <div class="card Bootstrap" id="">
                 <a class="card-link" href="https://leonascimentodev.github.io/projeto-bootstrap-01/" target="_blank">
                     <img class="card-cover" src="/imgs/site-bootstrap-01.png" alt="">
                     <span class="card-title">Home Page Institucional
@@ -167,7 +176,28 @@
                     </div>
                 </div>
             </div>
-            <div class="card Bootstrap JQUERY" id="Bootstrap">
+            <div class="card Vue" id="">
+                <a class="card-link" href="https://github.com/LeoNascimentoDev/Estudos/tree/main/Curso_Web_Cod3r/vue"
+                    target="_blank">
+                    <img class="card-cover" src="/imgs/exemplo.png" alt="">
+                    <span class="card-title">Exercícios Vue
+
+                    </span>
+                </a>
+                <div class="card-about">
+                    <span>
+                        Exercícios utilizando a tecnologia Vue.Js (Em desenvolvimento)
+                    </span>
+                    <div class="card-git">
+                        <a href="https://github.com/LeoNascimentoDev/Estudos/tree/main/Curso_Web_Cod3r/vue"
+                            target="_blank">
+                            Mais Informações
+                            <img class="icon" src="/imgs/Git_Hub.png" alt="Mais Informações" title="Mais Informações">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card Bootstrap JQUERY" id="">
                 <a class="card-link" href="https://projeto-galeria-01.vercel.app/" target="_blank">
                     <img class="card-cover" src="/imgs/projeto-galeria.png" alt="">
                     <span class="card-title">Galeria de Imagens
@@ -203,8 +233,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="card React" id="">
+            <div class="card React Next" id="">
                 <a class="card-link" href="https://hortifruti-app-leonascimentodev.vercel.app/" target="_blank">
                     <img class="card-cover" src="/imgs/hortifruti.png" alt="">
                     <span class="card-title">Hortifruit App</span>
@@ -222,8 +251,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="card JavaScript" id="JavaScript">
+            <div class="card JavaScript" id="">
                 <a class="card-link" href="/theword/theword.html" target="_blank">
                     <img class="card-cover" src="/imgs/thewordv1.png" alt="">
                     <span class="card-title">The Word Game V1.0</span>
@@ -240,8 +268,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="card JQUERY JavaScript" id="" data-selector="JQUERY">
+            <div class="card JQUERY JavaScript" id="">
                 <a class="card-link" href="https://github.com/LeoNascimentoDev/leonascimentodev.github.io"
                     target="_blank">
                     <img class="card-cover" src="/imgs/portifolio.png" alt="">
@@ -279,8 +306,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="card JavaScript CSS" id="">
                 <a class="card-link" href="/flappybird/flappybird.html" target="_blank">
                     <img class="card-cover" src="/imgs/flapbirdv1.png" alt="">
@@ -299,9 +324,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="card CSS" id="">
                 <a class="card-link" href="/cards/cards.html" target="_blank">
                     <img class="card-cover" src="/imgs/cards.png" alt="">
@@ -320,8 +342,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="card Outros" id="">
                 <a class="card-link" href="https://github.com/LeoNascimentoDev/Estudos/tree/main/Curso_Web_Cod3r"
                     target="_blank">
@@ -341,7 +361,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card C#" id="">
                 <a class="card-link" href="#" target="_blank">
                     <img class="card-cover" src="/imgs/bim_revit.png" alt="">
@@ -362,7 +381,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card Outros" id="">
                 <a class="card-link" href="#" target="_blank">
                     <img class="card-cover" src="/imgs/exemplo.png" alt="">
@@ -380,10 +398,7 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
     </main>
 
     <footer>
